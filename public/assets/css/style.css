@@ -13,7 +13,15 @@ body {
   color: #394454;
 }
 
-
+#preloader
+{
+  background: #0d0d0d url(../img/loading.gif) no-repeat center center;
+  background-size: 25%;
+  height: 100vh;
+  width: 100% ;
+  position: fixed;
+  z-index: 2147483647;
+}
 
 a {
   color: #f8971b;

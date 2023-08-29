@@ -18,6 +18,9 @@
   
 </head>
 <body>
+  <div id="preloader">
+
+  </div>
   
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -167,5 +170,11 @@
   <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
   <!-- Template Main JS File -->
   <script src="{{ url('assets/js/main.js') }}"></script>
+  <script>
+    var loader =document.querySelector('#preloader');
+    window.addEventListener('load', function(){
+    loader.style.display = "none";
+  })
+  </script>
 </body>
 </html>
