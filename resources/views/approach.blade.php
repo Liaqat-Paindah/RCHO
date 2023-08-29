@@ -20,20 +20,20 @@
           <div class="col-lg-6">
             <div class="portfolio-details-slider swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
               <div class="swiper-wrapper align-items-center" id="swiper-wrapper-e1095e36709130c46" aria-live="off" style="transform: translate3d(-1712px, 0px, 0px); transition-duration: 400ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 856px;">
-                  <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
+                  <img src="assets/img/approach/portfolio-3.jpg" alt="">
                 </div>
 
                 <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 856px;">
-                  <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                  <img src="assets/img/approach/portfolio-1.jpg" alt="">
                 </div>
 
 
                 <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 856px;">
-                  <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
+                  <img src="assets/img/approach/portfolio-3.jpg" alt="">
                 </div>
 
               <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 856px;">
-                  <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                  <img src="assets/img/approach/portfolio-1.jpg" alt="">
                 </div></div>
               <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
