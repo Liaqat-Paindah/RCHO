@@ -18,7 +18,7 @@
                     <!-- Table with stripped rows -->
                     <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
                         <div class="datatable-top">
-                            <a href="{{url('add_event')}}" class="btn btn-warning btn-sm "><i class="bi bi-plus"></i>New
+                            <a href="{{url('event_list')}}" class="btn btn-warning btn-sm "><i class="bi bi-plus"></i>New
                                 Event</a>
                             <div class="datatable-search">
                                 <input class="datatable-input" placeholder="Search..." type="search"
@@ -45,10 +45,10 @@
                                         <td>{{$event->organization}}</td>
                                         <td>{{$event->duration}}</td>
                                         <td class="text-justify">{{$event->desc}}</td>
-                                        <td><a href="delete_img/{{ $event->id }}" class="btn btn-sm btn-outline-danger">
+                                        <td><a href="{{url('event_list')}}" class="btn btn-sm btn-outline-danger">
                                                 <i class="bi bi-trash bi-sm"></i></a>
                                         </td>
-                                        <td><a href="{{url('img_edit/'.$event->id)}}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i>Edit</a>
+                                        <td><a href="{{url('event_list')}}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i>Edit</a>
                                         </td>
                                         <td><a href="" class="btn btn-sm btn-outline-info"><i class="bi bi-info bi-sm"></i></a></td>
                                     </tr>
