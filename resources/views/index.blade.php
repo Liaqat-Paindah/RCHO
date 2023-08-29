@@ -21,7 +21,7 @@
                   through the process.
                 </p>
                 <div>
-                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                  <a href="{{url('/services')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
                 </div>
               </div>
             </div>
@@ -38,7 +38,7 @@
                 <p class="animate__animated animate__fadeInUp">Delivering top-level service is our specialty, and we
                   thrive in a diverse and fast-paced environment.</p>
                 <div>
-                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                  <a href="{{url('/services')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
                 </div>
               </div>
             </div>
@@ -57,7 +57,7 @@
                   relevant services to meet our clients’ needs. This approach allows us to be flexible and efficient in
                   providing the necessary services in a timely.</p>
                 <div>
-                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                  <a href="{{url('/services')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
                 </div>
               </div>
             </div>
@@ -82,12 +82,13 @@
 
 
     <!-- ======= Why Us Section ======= -->
-    <section id="popular-courses" class="courses">
+    <div id="popular-courses" class="courses">
       <div class="container aos-init aos-animate" data-aos="fade-up">
 
         <div class="section-title">
           <h2>WHY US?</h2>
           <p>MgtWell has a proven track record of delivering management consulting and M&E solutions to the international development sector since early 2013. Our company has established itself as a market leader in our field. Some of the key elements that distinguish us from our competitors include.         </p>
+        
         </div>
 
         <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
@@ -196,11 +197,9 @@
         </div>
       </div>
     </div>
-    </section><!-- End Why Us Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
+  </div><!-- End Why Us Section -->
+    <div id="service" class="service courses">
+      <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Monitoring & Evaluation Services</h2>
@@ -209,38 +208,41 @@
             track record of successfully managing projects and delivering high-quality technical assistance and advisory
             services to Afghanistan’s institutional bodies and public administrations. </p>
         </div>
+
         <div class="row">
           @foreach($services as $data)
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"> <img src="{{$data->image}}" class="col-sm-6"></div>
-            <h4 class="title"><a href="">{{ $data->title }}</a></h4>
-            <p class="description">{{$data->desc }}</p>
-            <a href="" class="btn btn-outline-warning link">Read More</a>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"> <img src="{{$data->image}}" class="col-sm-6 servic-icons"></div>
+              <h4 class="services-title"><a href="">{{ $data->title }}</a></h4>
+              <p>{{$data->desc }}</p>
+            </div>
           </div>
           @endforeach
         </div>
-
-        <div class="section-title">
+        <div class="section-title mt-4">
           <h2>Management Consulting Services</h2>
           <p>MgtWell is a management consulting firm, offering a comprehensive range of services to help businesses
             tackle their challenges. Our team of highly skilled professionals brings extensive experience and insight to
             the table, delivering actionable solutions to enterprises and organizations in every sector. We have been
             providing professional consulting services for over a decade, with a large and satisfied client base across
-            Afghanistan. . </p>
-        </div>
+            Afghanistan. </p>
+
         <div class="row">
           @foreach($manages as $manage)
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"> <img src="{{$manage->image}}" class="col-sm-6"></div>
-            <h4 class="title"><a href="">{{ $manage->title }}</a></h4>
-            <p class="description">{{$manage->desc }}</p>
-            <a href="" class="btn btn-outline-warning link">Read More</a>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"> <img src="{{$manage->image}}" class="col-sm-6 servic-icons"></div>
+              <h4 class="services-title"><a href="">{{ $manage->title }}</a></h4>
+              <p>{{$manage->desc }}</p>
+            </div>
           </div>
           @endforeach
         </div>
-
       </div>
-    </section><!-- End Services Section -->
+    </div>
+    </div>
+
     <section id="speakers">
       <div class="container aos-init aos-animate" data-aos="fade-up">
         <div class="section-title">
@@ -250,6 +252,7 @@
               have participated in a broad range of projects and training programs in Afghanistan. We have a proven track
               record of successfully managing projects and delivering high-quality technical assistance and advisory services
               to Afghanistan’s institutional bodies and public administrations. </p>
+            
           </div>
         <div class="row">
           @foreach($events as $event)

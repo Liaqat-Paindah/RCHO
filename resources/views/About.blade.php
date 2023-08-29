@@ -1,5 +1,17 @@
 @extends('master')
 @section('content')
+<br><br> <br>
+<section class="breadcrumbs">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <ol>
+      <li><a href="{{url('/')}}">Home</a></li>
+              <li><a href="{{url('/About')}}">About</a></li>
+      </ol>
+    </div>
+
+  </div>
+</section>
 <!-- 
 <section id="about" class="about">
       <div class="container pt-4">
@@ -41,7 +53,7 @@
     </section>
    
 -->
-<section id="blog" class="blog">
+<div id="blog" class="blog">
       <div class="container pt-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row ">
@@ -51,7 +63,26 @@
             <article class="blog-details">
 
               <div class="post-img">
-                <img src="assets/img/blog/blog-1.jpg"  class="img-fluid">
+                <div class="col-lg-12">
+                  <div class="portfolio-details-slider swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                    <div class="swiper-wrapper align-items-center" id="swiper-wrapper-e1095e36709130c46" aria-live="off" style="transform: translate3d(-1712px, 0px, 0px); transition-duration: 400ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 856px;">
+                        <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
+                      </div>
+      
+                      <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 856px;">
+                        <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                      </div>
+      
+                      <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 856px;">
+                        <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
+                      </div>
+      
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 856px;">
+                        <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                      </div></div>
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
+                  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                </div>
               </div>
 
               <h2 class="title">About MgtWell Consulting Services </h2>
@@ -134,52 +165,68 @@
 
         </div>
       </div>
-    <div id="services" class="services pt-2">
-      <div class="container">
+</div>
+</div><!-- End service Section -->
+
+        <!-- ======= service Section ======= -->
+        <section id="service" class="service">
+      <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Our core values</h2>
+          <h2>Our core <span>values</span></h2>
         </div>
+
         <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"><i class="bi bi-briefcase"></i></div>
-            <h4 class="title"><a href="">Integrity</a></h4>
-            <p class="description">Integrity is at the forefront of our values. We are dedicated to upholding the highest ethical standards in all of our actions and decisions, and maintaining the trust of our clients and stakeholders.</p>
-            <a href="services" class="btn btn-outline-warning link">Read More</a>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-align-justify"></i></div>
+              <h4><a href="">Integrity</a></h4>
+              <p>Integrity is at the forefront of our values. We are dedicated to upholding the highest ethical standards in all of our actions and decisions, and maintaining the trust of our clients and stakeholders.</p>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"><i class="bi bi-card-checklist"></i></div>
-            <h4 class="title"><a href="">Teamwork</a></h4>
-            <p class="description">Teamwork is integral to our operations. We value collaboration and partnership with our clients and colleagues to achieve shared goals and deliver the best results.
-            <a href="services" class="btn btn-outline-warning link">Read More</a>
-            </p>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-street-view"></i></div>
+              <h4><a href="">Teamwork</a></h4>
+              <p>Teamwork is integral to our operations. We value collaboration and partnership with our clients and colleagues to achieve shared goals and deliver the best results.</p>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"><i class="bi bi-bar-chart"></i></div>
-            <h4 class="title"><a href="">Flexibility</a></h4>
-            <p class="description">Flexibility is also crucial to our operations. We are able to adapt to changing circumstances and client needs in order to achieve results that exceed expectations.      </p>
-            <a href="services" class="btn btn-outline-warning link">Read More</a>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-equalizer"></i></div>
+              <h4><a href="">Flexibility</a></h4>
+              <p>Flexibility is also crucial to our operations. We are able to adapt to changing circumstances and client needs in order to achieve results that exceed expectations.</p>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"><i class="bi bi-person-lines-fill"></i></div>
-            <h4 class="title"><a href="">Commitment</a></h4>
-            <p class="description">Commitment to our clients is of the utmost importance to us. We are dedicated to providing professional and quality services that help our clients achieve their goals.</p>
-            <a href="services" class="btn btn-outline-warning link">Read More</a>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-intersect"></i></div>
+              <h4><a href="">Commitment</a></h4>
+              <p>Commitment to our clients is of the utmost importance to us. We are dedicated to providing professional and quality services that help our clients achieve their goals.</p>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"><i class="bi bi-graph-up"></i></div>
-            <h4 class="title"><a href="">Quality Services</a></h4>
-            <p class="description">Our professionals see what others don't, challenge conventional thinking, and consistently deliver quality services.</p>
-            <a href="services" class="btn btn-outline-warning link">Read More</a>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-check-circle"></i></div>
+              <h4><a href="">Quality Services</a></h4>
+              <p>Our professionals see what others don't, challenge conventional thinking, and consistently deliver quality services.</p>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"><i class="bi bi-bar-chart-steps"></i></div>
-            <h4 class="title"><a href="">Innovation</a></h4>
-            <p class="description">Innovation is a key part of our approach. We are committed to exploring new and creative solutions to improve our services and stay ahead of the curve.            </p>
-            <a href="services" class="btn btn-outline-warning link">Read More</a>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-donate-blood"></i></div>
+              <h4><a href="">Innovation</a></h4>
+              <p>Innovation is a key part of our approach. We are committed to exploring new and creative solutions to improve our services and stay ahead of the curve.</p>
+            </div>
           </div>
+
         </div>
 
       </div>
-    </section>
+    </section><!-- End service Section -->
     @endsection

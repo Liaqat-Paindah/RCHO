@@ -31,10 +31,6 @@
               <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
             </div>
 
-            <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" role="group" aria-label="2 / 3"
-              style="width: 856px;">
-              <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
-            </div>
 
             <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" role="group" aria-label="3 / 3"
               style="width: 856px;">

@@ -29,9 +29,9 @@
           <li class="dropdown"><a href="{{url('/about')}}"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{{url('/firm')}}">Firm History</a></li>
+              <li><a href="{{url('/about')}}">About Mgtwell</a></li>
               <li><a href="{{url('/partners')}}">Our Partners</a></li>
               <li><a href="{{url('/team')}}">Our Team</a></li>
-              <li><a href="{{url('/services')}}">Our Services</a></li>
               <li><a href="{{url('/approach')}}">Our Approach</a></li>
             </ul>
           </li>
@@ -66,7 +66,7 @@
               <li><a href="{{url('/projects')}}">List of Projects</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="{{url('events')}}">News & Events</a></li>
+          <li><a class="nav-link scrollto" href="{{url('events')}}">Events</a></li>
 
           <li class="dropdown"><a href="{{url('/careers')}}"><span>Careers</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -100,11 +100,11 @@
                 <strong>Email:</strong> info@mgtwell.com<br>
               </p>
               <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://www.facebook.com/mgtwell/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.skype.com/ulfat85" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="https://wa.link/213swv" class="google-plus"><i class="bx bxl-whatsapp"></i></a>
+
+                <a href="https://www.linkedin.com/company/mgtwell-consulting-services/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="{{url('/services')}}">Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{url('/about')}}">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{url('/about')}}">Privacy policy</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{url('/login')}}">login</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{url('/contact')}}">Contact Us</a></li>
 
             </ul>
           </div>
@@ -134,24 +134,25 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>MgtWell Consulting Services</h4>
-            <p>MgtWell Consulting Services is an international development management consulting firm that was
+          <h4>MgtWell Consulting Services</h4>
+          <p>MgtWell Consulting Services is an international development management consulting firm that was
               established in 2013. The firm is registered with the Government of Afghanistan and the United States of
               America, and has been providing support to the international development and cooperation sector for over a
               decade.</p>
-            <form action="{{url('/')}}">
-              @csrf
-              @method('PUT')
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+            <span class="logo">
+              <div class="row">
+              <div class="col-sm-3"></div>
+            <img class="col-sm-6" src="assets/img/logo-footer.png" alt="">
+            </div>
+            </span>
           </div>
         </div>
       </div>
     </div>
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>MgtWell Consulting Services</span></strong>. All Rights Reserved. Designed by <a
-          href="">MgtWell Development Team</a>
+        &copy; Copyright 2023 <strong><span>MgtWell Consulting Services</span></strong>. All Rights Reserved. Designed by <a
+          href="">MgtWell</a>
       </div>
   </footer><!-- End Footer -->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i

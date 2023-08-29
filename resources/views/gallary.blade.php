@@ -26,17 +26,7 @@
         to Afghanistan’s institutional bodies and public administrations. </p>
     </div>
 
-    <div class="row">
-      <div class="col-lg-12 d-flex justify-content-center">
-        <ul id="portfolio-flters">
-          <li data-filter=".all" class="filter-active">All</li>
-          <li data-filter=".filter-project" class="">Projects</li>
-          <li data-filter=".filter-event" class="">Events</li>
-          <li data-filter=".filter-training" class="">Trainings</li>
-          <li data-filter=".filter-employee" class="">Employees</li>
-        </ul>
-      </div>
-    </div>
+
 
     <div class="row portfolio-container" style="position: relative; height: 1026px;">
       @if(count($Images) > 0)

@@ -169,7 +169,7 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{url('team_member')}}">
-          <i class="bi bi-person"></i>
+          <i class="bi bi-person"></i> 
           <span> Manage Teams  </span> <i class="bi bi-chevron-down ms-auto"></i>
         </a>
       </li>

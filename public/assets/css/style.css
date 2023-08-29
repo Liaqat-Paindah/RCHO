@@ -38,6 +38,10 @@ h6 {
 /*--------------------------------------------------------------
 # Courses
 --------------------------------------------------------------*/
+.courses
+{
+  margin-top: 40px;
+}
 .courses .course-item {
   border-radius: 5px;
   border: 1px solid #eef0ef;
@@ -243,7 +247,7 @@ h6 {
 
 .navbar>ul>li {
   white-space: nowrap;
-  padding: 10px 0 10px 22px;
+  padding: 10px 0 10px 18px;
 }
 
 .navbar a,
@@ -670,6 +674,15 @@ h6 {
     margin-left: 10%;
   }
 }
+@media (max-width: 576px) {
+  .servic-icons {
+    width: 50%;
+  }
+  #header .logo img {
+    max-height: 60px;
+    margin-left: 10%;
+  }
+}
 
 @media (min-width: 1024px) {
   #hero p {
@@ -685,9 +698,81 @@ h6 {
     margin-left: 10%;
   }
 }
+/* Service of About */
+/*--------------------------------------------------------------
+# About service
+--------------------------------------------------------------*/
+.service .icon-box {
+  text-align: center;
+  border: 1px solid #e2eefd;
+  padding: 60px 20px;
+  transition: all ease-in-out 0.3s;
+  background: #fff;
+}
+
+.service .icon-box .icon {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  background: #f1f6fe;
+  border-radius: 4px;
+  border: 1px solid #deebfd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: ease-in-out 0.3s;
+}
+
+.service .icon-box .icon i {
+  color: #f8971d;
+  font-size: 28px;
+  transition: ease-in-out 0.3s;
+}
+
+.service .icon-box h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+.service .icon-box .services-title
+{
+  font-size: 16px;
+
+}
+.service .icon-box h4 a {
+  color: #222222;
+  transition: ease-in-out 0.3s;
+}
+
+.service .icon-box p {
+  line-height: 20px;
+  font-size: 14px;
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+.service .icon-box:hover {
+  border-color: #fff;
+  box-shadow: 0px 0 25px 0 rgba(16, 110, 234, 0.1);
+}
+
+.service .icon-box:hover h4 a,
+.service .icon-box:hover .icon i {
+  color: #f8971d;
+}
+
+.service .icon-box:hover .icon {
+  border-color: #f8971d;
+}
+
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Speakers Section
 --------------------------------------------------------------*/
+
 #speakers {
   padding: 60px 0 30px 0;
 }
@@ -858,7 +943,6 @@ section {
 }
 
 .section-title {
-  padding-bottom: 30px;
   text-align: center;
 }
 
@@ -876,6 +960,7 @@ section {
   margin-bottom: 0;
   text-align: justify;
   font-size: 14px;
+  margin-bottom: 15px;
 }
 .section-new
 {
@@ -1215,7 +1300,7 @@ width: 80%;
   font-size: 36px;
   line-height: 0;
 }
-.services .link
+.service .link
 {
   position: absolute;
   bottom: 0;
@@ -2556,7 +2641,7 @@ width: 80%;
   }
 
   .gallery .swiper-slide-active {
-    border: 3px solid #fbbe00;
+    border: 1px solid #f8971d71;
     padding: 4px;
     background: #fff;
     z-index: 1;
@@ -2849,8 +2934,10 @@ width: 80%;
 
 .testimonials .testimonial-item p {
   font-style: italic;
-  margin: 0 auto 13px auto;
+  margin: 0 auto 12px auto;
   color: #eee;
+  text-align: justify;
+  font-size: 14px;
 }
 
 .testimonials .swiper-pagination {
@@ -2965,12 +3052,14 @@ width: 80%;
   width: 36px;
   height: 36px;
   transition: 0.3s;
+  border: 1px solid #394454;
+
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #fbbe00;
-  color: #fff;
   text-decoration: none;
+  border: 1px solid #f8971d;
+  color: #f8971d;
 }
 
 #footer .footer-top h4 {
