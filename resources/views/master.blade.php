@@ -69,7 +69,7 @@
               <li><a href="{{url('/projects')}}">List of Projects</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="{{url('events')}}">Events</a></li>
+          <li><a class="nav-link scrollto" href="{{url('events')}}"> Events</a></li>
 
           <li class="dropdown"><a href="{{url('/careers')}}"><span>Careers</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
