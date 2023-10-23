@@ -56,41 +56,61 @@
         <div class="portfolio-description">
           <h2>What We Do</h2>
           <p>
-            Our clients trust us to effectively design, implement, evaluate, and disseminate the results of our research and evaluations to key stakeholders. We strive to empower our clients to learn from their project achievements and increase their future impact while fulfilling their accountability requirements. MgtWell is capable of handling long-term projects and ensuring that we achieve the desired results within the allotted time frame. We always have a timeline and a strategic plan in place to ensure that all objectives are met in the assignment
+          At MgtWell Consulting Services, we offer a range of services to help our clients achieve their goals and improve their performance. Whether you need strategic advice, operational support, or evaluation and feedback, we have the expertise and experience to deliver.
+One of our core services is management consulting. We help our clients with various aspects of their business, such as strategy, organization, operations, innovation, and change management. We work closely with our clients to understand their needs, challenges, and opportunities, and provide them with tailored solutions that fit their context and objectives. We also help them implement and monitor the results of our recommendations, ensuring that they get the best value from our service.
           </p>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="section-title">
-        <h2>What We Do</h2>
-        <p>
-          MgtWell is a provider of comprehensive monitoring, evaluation, and learning services for organizations. Our goal is to assist our clients in measuring their activities and the results they achieve. We specialize in managing and implementing projects that involve assessing advocacy and long-term policy change efforts. Our approach is tailored to the specific needs of each project and typically involves a mix of quantitative and qualitative data collection methods, gap analysis, and the provision of disaggregated data for vulnerable and gender groups. Our services are driven by a commitment to learning and evidence-based decision-making and are supported by data visualization and communication products. Our services begin with the development of performance and results frameworks, which guide the design of data collection processes that ensure projects are meeting their targets and measuring their successes. In addition to our monitoring and evaluation services, we also assist in the development of knowledge management tools and products to support project outcomes.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="section-title">
-        <h2>Technology We Use
-        </h2>
-        <p>
-          At MgtWell, we utilize modern technology to support our centralized monitoring, evaluation, and learning
-          (MEAL) systems. Our team of highly qualified and dedicated international and national staff is committed to
-          providing top-quality services most cost-effectively. Our full-time core and provincial MEAL and data
-          collection specialists are well-versed in the use of the latest data collection, processing, and analysis
-          tools such as Open Data Kit (ODK), Kobo toolbox (KOBO), Statistical Package for Social Sciences (SPSS), Stata,
-          Microsoft Power BI, Fulcrum, and Tableau.
-
-          We employ mixed research methodologies and state-of-the-art technology to provide our clients with reliable,
-          verifiable, and accurate data. Our use of randomized geospatial sampling for surveys, GPS, and time stamps
-          enables us to track the time and movement of our field staff and triangulate data for analysis. Additionally,
-          we gather data from multiple sources, including observations from field staff, feedback from the beneficiary
-          community, satellite imagery, and data from implementing agencies, to ensure that we comprehensively
-          understand the project and can present accurate information to our clients.
+        <p>Another key service we offer is monitoring and evaluation (M&E). We help our clients measure and assess the impact and effectiveness of their projects, programs, or policies. We use a variety of methods and tools to collect and analyze data, such as surveys, interviews, focus groups, observations, case studies, and more. We also help our clients design and implement M&E systems that are robust, reliable, and user-friendly. We provide them with clear and concise reports that highlight the main findings, lessons learned, and recommendations for improvement.
+If you are interested in learning more about our consulting services or working with us on your next project, please contact us today. We would love to hear from you and discuss how we can help you succeed.
         </p>
       </div>
     </div>
 
   </div>
 </section>
+<section id="services3" class="services3 section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Technology We Use</h2>
+          <p>At MgtWell Consulting Services, we are always looking for ways to improve our services and deliver value to our clients. One of the ways we do that is by using cutting-edge technology to enhance our consulting services for management consulting and monitoring and evaluation.
+           For management consulting, we use a variety of tools to help us analyze data, create reports, and communicate with our clients. Some of the technology we use includes:
+        </p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-clipboard-data"></i></div>
+              <h4 class="title"><a href="">Power BI</a></h4>
+              <p class="description">This is a powerful data visualization and analytics tool that allows us to create interactive dashboards and reports that show key insights and trends from our data. We can also share these dashboards and reports with our clients online or offline, and they can access them from any device.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-microsoft-teams"></i></div>
+              <h4 class="title"><a href="">Microsoft Teams</a></h4>
+              <p class="description">This is a collaboration platform that enables us to communicate with our clients and colleagues in real time, through chat, voice, and video calls. We can also share files, documents, and presentations, and co-edit them with our clients. Microsoft Teams also integrates with other Microsoft apps, such as Outlook, Word, Excel, and PowerPoint, making it easy to switch between different tasks.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-share-fill"></i></div>
+              <h4 class="title"><a href="">SharePoint</a></h4>
+              <p class="description">This is a cloud-based service that allows us to store, manage, and share documents and files with our clients and colleagues. We can also create sites and pages to showcase our work and provide updates on our projects. SharePoint also has features such as version control, workflows, and permissions, that help us keep track of changes and ensure security.</p>
+            </div>
+          </div>
+        </div>
+        <p class="description">
+          For monitoring and evaluation, we use technology to help us collect data, measure impact, and report on outcomes. Some of the technology we use includes:
+          At MgtWell, we utilize modern technology to support our centralized monitoring, evaluation, and learning (MEAL) systems. Our team of highly qualified and dedicated international and national staff is committed to providing top-quality services most cost-effectively. Our full-time core and provincial MEAL and data collection specialists are well-versed in the use of the latest data collection, processing, and analysis tools such as Open Data Kit (ODK), Kobo toolbox (KOBO), Statistical Package for Social Sciences (SPSS), Stata, Microsoft Power BI, Fulcrum, and Tableau.
+          We employ mixed research methodologies and state-of-the-art technology to provide our clients with reliable, verifiable, and accurate data. Our use of randomized geospatial sampling for surveys, GPS, and time stamps enables us to track the time and movement of our field staff and triangulate data for analysis. Additionally, we gather data from multiple sources, including observations from field staff, feedback from the beneficiary community, satellite imagery, and data from implementing agencies, to ensure that we comprehensively understand the project and can present accurate information to our clients.
+
+        </p>
+
+      </div>
+    </section><!-- End Services Section -->
 @endsection

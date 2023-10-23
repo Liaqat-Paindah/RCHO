@@ -97,8 +97,15 @@ h6 {
   font-size: 18px;
   color: #394454;
 }
-
-
+.list-services
+{
+  list-style-type: none;
+  font-size: 14px;
+}
+.list-services li
+{
+  margin: 10px;
+}
 
 .courses .trainer .trainer-profile img {
   max-width: 50px;
@@ -117,6 +124,213 @@ h6 {
   color: #657a6d;
 }
 
+.featured-services .service-item {
+  padding: 30px;
+  transition: all ease-in-out 0.4s;
+  background: white;
+  height: 100%;
+}
+
+.featured-services .service-item .icon {
+  margin-bottom: 10px;
+}
+
+.featured-services .service-item .icon i {
+  color: var(--color-primary);
+  font-size: 36px;
+  transition: 0.3s;
+}
+
+.featured-services .service-item h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.featured-services .service-item h4 a {
+  color: var(--color-secondary);
+  transition: ease-in-out 0.3s;
+}
+
+.featured-services .service-item p {
+  line-height: 24px;
+  font-size: 14px;
+  text-align: justify;
+  margin-bottom: 0;
+}
+
+.featured-services .service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 0 60px 0 rgba(128, 126, 126, 0.1);
+}
+
+.featured-services .service-item:hover h4 a {
+  color: var(--color-primary);
+}
+
+/*--------------------------------------------------------------
+# services2 Section
+--------------------------------------------------------------*/
+.services2 .img {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.services2 .img img {
+  transition: 0.6s;
+}
+
+.services2 .details {
+  padding: 50px 30px;
+  height:280px;
+  margin: -100px 30px 0 30px;
+  transition: all ease-in-out 0.3s;
+  background: var(--color-white);
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  text-align: justify;
+  border-radius: 8px;
+  box-shadow: 0px 0 25px rgba(120, 120, 120, 0.1);
+}
+
+.services2 .details .icon {
+  margin: 0;
+  width: 72px;
+  height: 72px;
+  background: var(--color-primary);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--color-white);
+  font-size: 28px;
+  transition: ease-in-out 0.3s;
+  position: absolute;
+  top: -36px;
+  left: calc(50% - 36px);
+  border: 2px solid #f8971b;
+  background-color: white;
+}
+
+.services2 .details h3 {
+  color: var(--color-default);
+  font-weight: 700;
+  margin: 10px 0 15px 0;
+  font-size: 22px;
+  transition: ease-in-out 0.3s;
+  text-align: center;
+}
+
+.services2 .details p {
+  font-size: 13px;
+  text-align: justify;
+}
+
+.services2 .service-item:hover .details h3 {
+  color: var(--color-primary);
+}
+
+.services2 .service-item:hover .details .icon {
+  background: #fbbe00;
+  border: 2px solid white;
+}
+
+.services2 .service-item:hover .details .icon i {
+  color: white;
+}
+
+.services2 .service-item:hover .img img {
+  transform: scale(1.2);
+}
+.section-header p
+{
+  text-align: justify;
+  font-size: 14px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+/*--------------------------------------------------------------
+# services33
+--------------------------------------------------------------*/
+.services3 .icon-box {
+  padding: 50px 20px;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  text-align: center;
+  height: 320px;
+  position: relative;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+.services3 .fit {
+  padding: 50px 20px;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  text-align: center;
+  height: 260px;
+  position: relative;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+.services3 .icon {
+  position: absolute;
+  top: -36px;
+  left: calc(50% - 36px);
+  transition: 0.2s;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 72px;
+  height: 72px;
+  background: #f8971d;
+}
+
+.services3 .icon i {
+  color: #fff;
+  font-size: 24px;
+  line-height: 0;
+}
+
+.services3 .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.services3 .title a {
+  color: #343a40;
+}
+
+.services3 .description
+{
+  text-align: justify;
+
+}
+.services3 .icon-box:hover .icon {
+  background: #fff;
+  border: 2px solid #f8971d;
+}
+
+.services3 .icon-box:hover .icon i {
+  color: #f8971d;
+}
+
+.services3 .icon-box:hover .title a {
+  color: #f8971d;
+}
+
+.services3 .description {
+  line-height: 24px;
+  font-size: 14px;
+}
 /*--------------------------------------------------------------
 # Trainers
 --------------------------------------------------------------*/
