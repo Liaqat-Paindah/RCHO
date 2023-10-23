@@ -16,12 +16,13 @@
     <div class="container">
         <div class="section-title">
             <h2>Our Team</h2>
-            <p>MgtWell Consulting Services is composed of a diverse team of over 150 experienced professionals,
-                including project managers, researchers, data analysts, and experts in monitoring and evaluation, and
-                communications. Our team has a wealth of experience and skills in their respective areas of expertise,
-                including research and survey, monitoring and evaluation, and management consulting. With years of
-                experience in their fields, our team is well-equipped to provide high-quality services and support to
-                our clients.</p>
+            <p>MgtWell Consulting Services prides itself on its exceptional team, which consists of more than 150 highly skilled professionals. This diverse group is comprised of project managers, business experts, mentors' trainers, researchers, data analysts, and specialists in monitoring and evaluation, as well as business management. Each member of our team brings a wealth of experience and expertise to the table. 
+            Our project managers possess a deep understanding of effective strategies and methodologies, ensuring that every project is executed with precision and efficiency. Our business experts have a keen eye for identifying opportunities and implementing innovative solutions that drive growth and success for our clients. The mentors' trainers on our team are dedicated to nurturing talent and empowering individuals to reach their full potential.
+            Furthermore, our researchers are skilled at conducting thorough and insightful studies, providing valuable insights that inform decision-making processes. The data analysts we have onboard possess exceptional analytical skills, enabling them to extract meaningful information from complex datasets. Our experts in monitoring and evaluation ensure that our clients' projects are constantly assessed and optimized for maximum impact.
+            With years of experience in their respective fields, our team members are well-equipped to deliver high-quality services and unwavering support to our clients.
+            Our professional team values the diverse needs of our clients and struggles to offer solutions and results that are personalized to the smallest detail and aligned with the highest quality standards.
+            .</p>
+            <br>
         </div>
         <div class="row">
             <div class="col-xl-4">
@@ -33,10 +34,6 @@
                         <h2>{{$team->name}}</h2>
                         <h3>{{$team->position}}</h3>
                         <div class="social-links mt-2">
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
