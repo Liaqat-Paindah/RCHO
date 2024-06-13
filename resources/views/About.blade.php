@@ -1,232 +1,133 @@
 @extends('master')
 @section('content')
-<br><br> <br>
-<section class="breadcrumbs">
-  <div class="container">
-    <div class="d-flex justify-content-between align-items-center">
-      <ol>
-      <li><a href="{{url('/')}}">Home</a></li>
-              <li><a href="{{url('/About')}}">About</a></li>
-      </ol>
-    </div>
+<main id="main">
 
-  </div>
-</section>
-<!-- 
-<section id="about" class="about">
-      <div class="container pt-4">
-        <div class="row no-gutters">
-          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
-          <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch">
-            <div class="content d-flex flex-column justify-content-center">
-              <h3>About MgtWell Consulting Services </h3>
-              <p>
-              MgtWell Consulting Services is an international development management consulting firm that was established in 2013. The firm is registered with the Government of Afghanistan and the United States of America, and has been providing support to the international development and cooperation sector for over a decade.
-              </p>
-              <div class="row">
-                <div class="col-md-6 icon-box">
-                  <i class="bx bx-cube-alt"></i>
-                  <h4>Our Vision</h4>
-                  <p>To be a leading consulting firm in the region, renowned for our exceptional quality services, innovative solutions, and measurable results that contribute to building a better and sustainable world.</p>
-                </div>
-                <div class="col-md-6 icon-box">
-                  <i class="bx bx-receipt"></i>
-                  <h4>Our Goal</h4>
-                  <p>Our goal is to provide innovative and effective solutions that drive meaningful change and positively impact the lives of those we serve.</p>
-                </div>
-                <div class="col-md-8 icon-box">
-                  <i class="bx bx-shield"></i>
-                  <h4>Statement of Belief</h4>
-                  <p>We believe that providing superior quality consulting services is the key to achieving sustainable development outcomes. We understand that delivering high-quality services to development implementers can lead to positive impact on the ground and help bridge the gap between implementers and beneficiaries. We are committed to providing professional and technical assistance that allows our clients to achieve their goals, and ultimately make a difference in the lives of those they serve.</p>
-                </div>
-                <div class="col-md-4 icon-box">
-                  <i class="bx bx-images"></i>
-                  <h4>Our Mission</h4>
-                  <p>To continually strive to be the best and to give our clients quality work that is trustworthy, ethically driven, and empirically proven.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-   
--->
-<div id="blog" class="blog">
-      <div class="container pt-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row ">
-
-          <div class="col-lg-8">
-
-            <article class="blog-details">
-
-              <div class="post-img">
-                <div class="col-lg-12">
-                  <div class="portfolio-details-slider swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-                    <div class="swiper-wrapper align-items-center" id="swiper-wrapper-e1095e36709130c46" aria-live="off" style="transform: translate3d(-1712px, 0px, 0px); transition-duration: 400ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 856px;">
-                        <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
-                      </div>
-      
-                      <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 856px;">
-                        <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
-                      </div>
-      
-                      <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 856px;">
-                        <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
-                      </div>
-      
-                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 856px;">
-                        <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
-                      </div></div>
-                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
-                  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-                </div>
-              </div>
-
-              <h2 class="title">About MgtWell Consulting Services </h2>
-                <div class="content">
-                <p>
-                  MgtWell Consulting Services is an international development management consulting firm that was established in 2013. The firm is registered with the Government of Afghanistan and the United States of America, and has been providing support to the international development and cooperation sector for over a decade.
-                </p>
-                <blockquote>
-                  <p>
-                    Throughout the years, MgtWell has partnered with various organizations, including government agencies, bilateral and multilateral agencies, foundations, private entities, and INGOs, to clarify, measure , and improve their results.
-                  </p>
-                </blockquote>
-
-              </div><!-- End post content -->
-            </article><!-- End blog post -->
-          </div>
-          <div class="col-lg-4">
-
-            <div class="sidebar">
-
-              <div class="sidebar-item search-form">
-                <h3 class="sidebar-title">Search</h3>
-                <form action="" class="mt-3">
-                  <input type="text">
-                  <button type="submit"><i class="bi bi-search"></i></button>
-                </form>
-              </div><!-- End sidebar search formn-->
-
-              <div class="sidebar-item categories">
-                <h3 class="sidebar-title">Service Categories</h3>
-                <ul class="mt-3">
-                  @foreach($services as $service)
-                  <li><a href="#" class="pt-2"><i class="bi bi-chevron-right"></i> {{$service->title}}</a></li>
-                  @endforeach
-                </ul>
-              </div><!-- End sidebar categories-->
-
-            </div><!-- End Blog Sidebar -->
-
-          </div>
-        </div>
-
-      </div>
-    <div id="counts" class="counts">
+<br><br><br> <br><br> <br><br>
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
       <div class="container">
 
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-trophy"></i>
-              <span data-purecounter-start="0" data-purecounter-end="19" data-purecounter-duration="0" class="purecounter">19</span>
-              <p>Awards Wining</p>
-            </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
           </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-check-circle"></i>
-              <span data-purecounter-start="0" data-purecounter-end="78" data-purecounter-duration="0" class="purecounter">78</span>
-              <p>Projects Completed</p>
-            </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h3>About Us</h3>
+            <p >
+            Afghanistan Research Development and Health organization (ARDHO) is a non-governmental, non-profit and
+                humanitarian organization registered with the Ministry of Economy of Afghanistan, established in 2019 by
+                a group of young, energetic, motivated, and highly committed youth to address the most urgent and
+                pressing needs of the people of Afghanistan to improve and develop the socio-economic status of the
+                underprivileged and disadvantaged rural communities in Afghanistan.
+            </p>
+            <ul>
+                <h5> ARDHO Common goals and aspirations for 2022 - 2025:</h5> 
+              <li><i class="bx bx-check-double"></i> Transforming Livelihood.</li>
+              <li> <i class="bx bx-check-double"></i>  Strengthening access to quality education, health, nutrition and hygiene facilities.</li>
+              <li> <i class="bx bx-check-double"></i> Child protection  </li>
+              <li> <i class="bx bx-check-double"></i> Promote women’s leadership and participation, strengthen their safety and security, and accelerate their economic empowerment</li>
+            </ul>
           </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-briefcase"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1354" data-purecounter-duration="0" class="purecounter">1354</span>
-              <p>Job Created</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="280" data-purecounter-duration="0" class="purecounter">280</span>
-              <p>Satisfied Clients</p>
-            </div>
-          </div>
-
         </div>
-      </div>
-</div>
-</div><!-- End service Section -->
 
-        <!-- ======= service Section ======= -->
-        <section id="service" class="service">
+      </div>
+    </section><!-- End About Section -->
+
+
+<!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Our core <span>values</span></h2>
-        </div>
-
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-align-justify"></i></div>
-              <h4><a href="">Integrity</a></h4>
-              <p>Integrity is at the forefront of our values. We are dedicated to upholding the highest ethical standards in all of our actions and decisions, and maintaining the trust of our clients and stakeholders.</p>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Happy Partners</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-street-view"></i></div>
-              <h4><a href="">Teamwork</a></h4>
-              <p>Teamwork is integral to our operations. We value collaboration and partnership with our clients and colleagues to achieve shared goals and deliver the best results.</p>
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Projects</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-equalizer"></i></div>
-              <h4><a href="">Flexibility</a></h4>
-              <p>Flexibility is also crucial to our operations. We are able to adapt to changing circumstances and client needs in order to achieve results that exceed expectations.</p>
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi-person"></i>
+              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Staff</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-intersect"></i></div>
-              <h4><a href="">Commitment</a></h4>
-              <p>Commitment to our clients is of the utmost importance to us. We are dedicated to providing professional and quality services that help our clients achieve their goals.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-check-circle"></i></div>
-              <h4><a href="">Quality Services</a></h4>
-              <p>Our professionals see what others don't, challenge conventional thinking, and consistently deliver quality services.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-donate-blood"></i></div>
-              <h4><a href="">Innovation</a></h4>
-              <p>Innovation is a key part of our approach. We are committed to exploring new and creative solutions to improve our services and stay ahead of the curve.</p>
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi-award"></i>
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Awards</p>
             </div>
           </div>
 
         </div>
 
       </div>
-    </section><!-- End service Section -->
-    @endsection
+    </section><!-- End Counts Section -->
+
+
+    <section id="more-services" class="more-services">
+        <div class="container px-4">
+  
+          <div class="row">
+            <div class="col-md-6 d-flex align-items-stretch">
+              <div class="card" style='background-image: url("assets/img/more-services-1.jpg");' data-aos="fade-up" data-aos-delay="100">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="">Vision:</a></h5>
+                  <p class="card-text">  We envision a poverty-free society, socially and economically self-reliant where all Afghans regardless of gender are empowered to make positive changes in their lives by exercising their rights in all spheres of their lives with dignity.
+                    </p>
+                  <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+              <div class="card" style='background-image: url("assets/img/more-services-2.jpg");' data-aos="fade-up" data-aos-delay="200">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="">Focus: </a></h5>
+                  <p class="card-text">At the heart of our endeavors lies the empowerment of women and girls, recognizing that true alleviation of poverty necessitates the attainment of equal rights and opportunities for all individuals.</p>
+                  <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                </div>
+              </div>
+  
+            </div>
+            <div class="col-md-6 d-flex align-items-stretch mt-4">
+              <div class="card" style='background-image: url("assets/img/more-services-3.jpg");' data-aos="fade-up" data-aos-delay="100">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="">Our History:</a></h5>
+                  <p class="card-text"> Afghanistan Research Development and Health organization (ARDHO) is a non-governmental, non-profit and humanitarian organization registered with the Ministry of Economy of Afghanistan, established in 2019 by a group of young, energetic, motivated, and highly committed youth to address the most urgent and pressing needs of the people of Afghanistan to improve and develop the socio-economic status of the underprivileged and disadvantaged rural communities in Afghanistan.   
+                    </p>
+                  <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-stretch mt-4">
+              <div class="card" style='background-image: url("assets/img/more-services-4.jpg");' data-aos="fade-up" data-aos-delay="200">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="">Mission:</a></h5>
+                  <p class="card-text"> ARDHO operates national wide with the overarching aim of preserving lives, eradicating poverty, and fostering the realization of social justice. ARDHO reaches out to the marginalized sections of the society, especially the underprivileged and disadvantaged rural communities, to protect, improve, upgrade and enrich their lives through sustainable development initiatives such as education, research, health, conflict resolution, productive and sustainable livelihood programs, disaster risk management and emergency response mechanism.
+                    </p>
+                  <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End More Services Section -->
+
+
+
+</main><!-- End #main -->
+@endsection

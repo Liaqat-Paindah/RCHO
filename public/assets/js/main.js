@@ -1,9 +1,11 @@
 /**
-* Template Name: Groovin - v4.10.0
-* Template URL: https://bootstrapmade.com/groovin-free-bootstrap-theme/
+* Template Name: eBusiness
+* Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+* Updated: Mar 17 2024 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
 (function() {
   "use strict";
 
@@ -19,8 +21,6 @@
     }
   }
 
-
-
   /**
    * Easy event listener function
    */
@@ -35,98 +35,9 @@
     }
   }
 
-
-   /**
-   * Skills animation
-   */
-   let skilsContent = select('.skills-content');
-   if (skilsContent) {
-     new Waypoint({
-       element: skilsContent,
-       offset: '80%',
-       handler: function(direction) {
-         let progress = select('.progress .progress-bar', true);
-         progress.forEach((el) => {
-           el.style.width = el.getAttribute('aria-valuenow') + '%'
-         });
-       }
-     })
-   }
- 
   /**
    * Easy on scroll event listener 
    */
- /**
-   * Clients Slider
-   */
- new Swiper('.gallery-slider', {
-  speed: 600,
-  loop: true,
-  centeredSlides: true,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false
-  },
-  slidesPerView: 'auto',
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    640: {
-      slidesPerView: 3,
-      spaceBetween: 20
-    },
-    992: {
-      slidesPerView: 5,
-      spaceBetween: 20
-    }
-  }
-});
- /**
-   * Initiate gallery lightbox 
-   */
- const galleryLightbox = GLightbox({
-  selector: '.gallery-lightbox'
-});
-
-/**
- * Animation on scroll
- */
-window.addEventListener('load', () => {
-  AOS.init({
-    duration: 1000,
-    easing: 'ease-in-out',
-    once: true,
-    mirror: false
-  })
-});
-    /**
-   * Testimonials slider
-   */
-    new Swiper('.testimonials-slider', {
-      speed: 600,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      slidesPerView: 'auto',
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
-      }
-    });
-
-
-
-    
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
   }
@@ -158,11 +69,31 @@ window.addEventListener('load', () => {
     let header = select('#header')
     let offset = header.offsetHeight
 
+    if (!header.classList.contains('header-scrolled')) {
+      offset -= 16
+    }
+
     let elementPos = select(el).offsetTop
     window.scrollTo({
       top: elementPos - offset,
       behavior: 'smooth'
     })
+  }
+
+  /**
+   * Toggle .header-scrolled class to #header when page is scrolled
+   */
+  let selectHeader = select('#header')
+  if (selectHeader) {
+    const headerScrolled = () => {
+      if (window.scrollY > 100) {
+        selectHeader.classList.add('header-scrolled')
+      } else {
+        selectHeader.classList.remove('header-scrolled')
+      }
+    }
+    window.addEventListener('load', headerScrolled)
+    onscroll(document, headerScrolled)
   }
 
   /**
@@ -230,6 +161,16 @@ window.addEventListener('load', () => {
   });
 
   /**
+   * Preloader
+   */
+  let preloader = select('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      preloader.remove()
+    });
+  }
+
+  /**
    * Hero carousel indicators
    */
   let heroCarouselIndicators = select("#hero-carousel-indicators")
@@ -264,7 +205,6 @@ window.addEventListener('load', () => {
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-
       }, true);
     }
 
@@ -278,15 +218,16 @@ window.addEventListener('load', () => {
   });
 
   /**
-   * Portfolio details slider
+   * Testimonials slider
    */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
+  new Swiper('.testimonials-slider', {
+    speed: 600,
     loop: true,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false
     },
+    slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -294,16 +235,93 @@ window.addEventListener('load', () => {
     }
   });
 
+  
+  /**
+   * Clients Slider
+   */
+  new Swiper('.gallery-slider', {
+    speed: 400,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      992: {
+        slidesPerView: 5,
+        spaceBetween: 20
+      }
+    }
+  });
+
+
+  // Fetch sector, federal state, and other filter options
+const sectorOptions = ['Sector 1', 'Sector 2', 'Sector 3'];
+const federalStateOptions = ['Federal State 1', 'Federal State 2', 'Federal State 3'];
+const employmentContractOptions = ['Full-time', 'Part-time', 'Temporary'];
+const workingTimeModelOptions = ['Regular', 'Flexible', 'Remote'];
+const jobOfferOptions = ['Permanent', 'Temporary', 'Internship'];
+const qualificationsOptions = ['Bachelor', 'Master', 'PhD'];
+
+// Populate the dropdown options
+populateDropdown('sector', sectorOptions);
+populateDropdown('federal-state', federalStateOptions);
+populateDropdown('employment-contract', employmentContractOptions);
+populateDropdown('working-time-model', workingTimeModelOptions);
+populateDropdown('job-offer', jobOfferOptions);
+populateDropdown('qualifications', qualificationsOptions);
+
+// Add event listener to the "Find jobs" button
+document.getElementById("find-jobs").addEventListener("click", () => {
+  const jobSearch = document.getElementById("job-search").value;
+  const sector = document.getElementById("sector").value;
+  const federalState = document.getElementById("federal-state").value;
+  const employmentContract = document.getElementById("employment-contract").value;
+  const workingTimeModel = document.getElementById("working-time-model").value;
+  const jobOffer = document.getElementById("job-offer").value;
+  const qualifications = document.getElementById("qualifications").value;
+  const sortBy = document.getElementById("sort-by").value;
+
+  // Fetch job data based on the user's inputs and update the page
+  // You'll need to implement the logic to fetch and display the job data
+});
+
+function populateDropdown(id, options) {
+  const dropdown = document.getElementById(id);
+  options.forEach(option => {
+    const optionElement = document.createElement("option");
+    optionElement.value = option;
+    optionElement.text = option;
+    dropdown.add(optionElement);
+  });
+}
+
+  /**
+   * Initiate gallery lightbox 
+   */
+  const galleryLightbox = GLightbox({
+    selector: '.gallery-lightbox'
+  });
+
   /**
    * Initiate Pure Counter 
    */
   new PureCounter();
 
+
 })()
-
-
-
-let p=document.querySelector('.text3');
-const text3='Our associates and subject matter experts possess extensive experience in strengthening multilateral institutions, civil society, and non profit organizations. At MgtWell, we employ a comprehensive approach that combines trained local staff and advanced technology to gather accurate, timely, and reliable data across Afghanistan and analyze it swiftly and thoroughly. Our team has a proven track record in conducting surveys, monitoring, and evaluating all research fields.'
-p.innerHTML=text3.substring(0,300)+'...'+'<a href="about">Read More</a>';
-
