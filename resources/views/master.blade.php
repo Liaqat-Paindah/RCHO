@@ -55,7 +55,7 @@
             <ul>
               <li><a href="{{ url('/about') }}">Who we are</a></li>
               <li><a href="{{ url('/staff') }}">Staff</a></li>
-              <li><a href="#">Approach</a></li>
+              <li><a href="{{ url('/approach') }}">Approach</a></li>
               <li><a href="#">Programs</a></li>
             </ul>
           </li>

@@ -49,6 +49,10 @@ Route::get('/about', function(){
   return view('about');
 });
 
+Route::get('/approach', function(){
+  return view('approach');
+});
+
 
 Route::get('/job-details', function(){
   return view('job-details');

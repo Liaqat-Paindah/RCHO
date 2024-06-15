@@ -57,7 +57,11 @@
 
       </div>
     </div>
+
+
+    
   </section><!-- End Hero Section -->
+  
   <div id="team" class="our-team-area area-padding">
     <div class="container">
       <div class="row">
@@ -303,6 +307,34 @@
       </div>
     </div><!-- End Rviews Section -->
   </section><!-- End Gallery Section -->
+        <!-- Call To Action Section -->
+        <section id="call-to-action" class="call-to-action section">
+
+<div class="container" data-aos="zoom-out">
+
+  <div class="row g-5">
+
+    <div class="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first">
+      <h3>Dr. Nasratullah "Safari"</h3>
+      <p>             Afghanistan Research Development and Health organization (ARDHO) is a non-governmental, non-profit and
+        humanitarian organization registered with the Ministry of Economy of Afghanistan, established in 2019 by
+        a group of young, energetic, motivated, and highly committed youth to address the most urgent and
+        pressing needs of the people of Afghanistan to improve and develop the socio-economic status of the
+        underprivileged and disadvantaged rural communities in Afghanistan.</p>
+      <a class="cta-btn align-self-start" href="#">More Details</a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
+      <div class="img">
+        <img src="assets/img/cta.jpg" alt="" class="img-fluid">
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</section><!-- /Call To Action Section -->
 
 
 </main><!-- End #main -->
