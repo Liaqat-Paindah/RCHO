@@ -53,6 +53,10 @@ Route::get('/approach', function(){
   return view('approach');
 });
 
+Route::get('/programs', function(){
+  return view('programs');
+});
+
 
 Route::get('/job-details', function(){
   return view('job-details');

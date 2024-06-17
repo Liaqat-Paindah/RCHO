@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Job;
 use App\Models\Career;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ConfirmationMail;
 
 class JobsController extends Controller
 {
@@ -64,6 +66,7 @@ class JobsController extends Controller
            $filenameletter = time().'.'.$extenstionletter;
           $path_files= $fileletter->move('public/assets/img/applications', $filename);
            $save->letters = $path_files;
+           Mail::to($request->input('email'))->send(new ConfirmationMail());
            $save->save();
            if($save)
            {

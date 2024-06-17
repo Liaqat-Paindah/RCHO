@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ConfirmationMail extends Mailable
+class Confirmation extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,8 +28,6 @@ class ConfirmationMail extends Mailable
      */
     public function build()
     {
-        return $this->from('ICT@ardho.org', 'Confirmation Email')
-                    ->subject('Confirmation Email')
-                    ->markdown('emails.confirmation');
+        return $this->markdown('emails.confirmation');
     }
 }
