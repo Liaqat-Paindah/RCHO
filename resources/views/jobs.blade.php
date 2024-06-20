@@ -11,19 +11,20 @@
       <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6 p-4 shadow">
-        @if(Session::has('success'))
-                  <div class="alert alert-success"> {{Session::get('success')}}   </div>
-                  @endif
-                  @if(Session::has('fail'))
-                  <div class="alert alert-danger"> {{Session::get('fail')}}   </div>
-                  @endif
+          @if(Session::has('success'))
+          <div class="alert alert-success"> {{Session::get('success')}} </div>
+          @endif
+          @if(Session::has('fail'))
+          <div class="alert alert-danger"> {{Session::get('fail')}} </div>
+          @endif
           <form id="jobApplicationForm" action="{{ url('/jobs') }}" method="post" enctype="multipart/form-data">
-          @csrf
+            @csrf
             <div class="form-step active" id="step1">
               <h4>Step 1: Personal Information</h4>
               <div class="form-group">
                 <label for="fullName">Full Name:</label>
-                <input type="text" class="form-control" name="fullname" id="fullName" required placeholder="Example: Liaqat Paindah">
+                <input type="text" class="form-control" name="fullname" id="fullName" required
+                  placeholder="Example: Liaqat Paindah">
               </div>
               <br>
               <div class="form-group">
@@ -42,7 +43,8 @@
               <br>
               <div class="form-group">
                 <label for="NID">Tazkira Number:</label>
-                <input type="text" class="form-control" name="nid" id="NID" required placeholder="Example: 1400-0404-98234">
+                <input type="text" class="form-control" name="nid" id="NID" required
+                  placeholder="Example: 1400-0404-98234">
               </div>
 
               <button type="button" class="btn btn-primary mt-2" onclick="nextStep()">Next</button>
@@ -52,18 +54,21 @@
               <h4>Step 2: Contact Information</h4>
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" name="email" id="email" required placeholder="Example: example@gmail.com">
+                <input type="email" class="form-control" name="email" id="email" required
+                  placeholder="Example: example@gmail.com">
               </div>
               <br>
               <div class="form-group">
                 <label for="phone">Phone:</label>
-                <input type="tel" class="form-control" name="phone" id="phone" required placeholder="Example: +93 (0) 788-234-234">
+                <input type="tel" class="form-control" name="phone" id="phone" required
+                  placeholder="Example: +93 (0) 788-234-234">
               </div>
 
               <br>
               <div class="form-group">
                 <label for="province">Province:</label>
-                <input type="text" class="form-control" name="province" id="province" required placeholder="Example: Kabul">
+                <input type="text" class="form-control" name="province" id="province" required
+                  placeholder="Example: Kabul">
               </div>
 
               <br>
@@ -75,7 +80,8 @@
               <br>
               <div class="form-group">
                 <label for="district">District:</label>
-                <input type="text" class="form-control" name="district" id="district" required placeholder="Example: 4 District">
+                <input type="text" class="form-control" name="district" id="district" required
+                  placeholder="Example: 4 District">
               </div>
 
               <button type="button" class="btn btn-primary mt-2 mr-2" onclick="prevStep()">Previous</button>
@@ -98,30 +104,43 @@
               <br>
               <div class="form-group">
                 <label for="major">Major:</label>
-                <input type="text" name="major" class="form-control" id="major" required placeholder="Example: Computer Science">
+                <input type="text" name="major" class="form-control" id="major" required
+                  placeholder="Example: Computer Science">
               </div>
               <br>
               <div class="form-group">
                 <label for="graduationYear">Graduation Year:</label>
-                <input type="number" name="graduation" class="form-control" id="graduationYear" required placeholder="Example: 2022">
+                <input type="number" name="graduation" class="form-control" id="graduationYear" required
+                  placeholder="Example: 2022">
               </div>
 
               <br>
               <div class="form-group">
                 <label for="grade">Grade:</label>
-                <input type="text" name="grade"  class="form-control" id="grade" required placeholder="Example: A">
+                <input type="text" name="grade" class="form-control" id="grade" required placeholder="Example: A">
               </div>
 
               <button type="button" class="btn btn-primary mt-2 mr-2" onclick="prevStep()">Previous</button>
               <button type="button" class="btn btn-primary mt-2" onclick="nextStep()">Next</button>
             </div>
 
+
+
             <div class="form-step" id="step4">
               <h4>Step 4: Experience Information</h4>
               <div class="form-group">
-                <label for="experience">Experience:</label>
-                <textarea class="form-control" name="experience"  id="experience" required></textarea>
+                <label for="experience">Do you have work experience?</label>
+                <select onchange="toggleButton()" name="experience" class="form-control" id="Yes_No">
+                  <Option value="disabled">...</Option>
+                  <Option value="Yes">Yes</Option>
+                  <option value="No">No</option>
+                </select>
               </div>
+              <div id="workExperienceContainer">
+                <!-- This container will hold dynamically added work experience fields -->
+              </div>
+              <button id="addButton" type="button" class="btn btn-success mt-2" onclick="addWorkExperience()">Add Work
+                Experience</button>
               <button type="button" class="btn btn-primary mt-2 mr-2" onclick="prevStep()">Previous</button>
               <button type="button" class="btn btn-primary mt-2" onclick="nextStep()">Next</button>
             </div>
@@ -137,6 +156,20 @@
                 <label for="coverLetter">Cover Letter:</label>
                 <input type="file" name="letters" class="form-control-file" id="coverLetter" required>
               </div>
+
+              <div class="form-group">
+                <label for="coverLetter">Diploma:</label>
+                <input type="file" name="diploma" class="form-control-file" id="diploma" required>
+              </div>
+              <div class="form-group">
+                <label for="coverLetter">Transcript:</label>
+                <input type="file" name="transcript" class="form-control-file" id="transcript" required>
+              </div>
+              <div class="form-group">
+                <label for="coverLetter">NID || Tazkira:</label>
+                <input type="file" name="tazkira" class="form-control-file" id="tazkira" required>
+              </div>
+
               <button type="button" class="btn btn-primary mt-2 mr-2" onclick="prevStep()">Previous</button>
               <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </div>
@@ -151,6 +184,68 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  var addButton = document.getElementById('addButton');
+  addButton.style.display = 'none'; // Ensure button is hidden initially
+});
+
+function toggleButton() {
+  var Yes_No = document.getElementById('Yes_No');
+  var addButton = document.getElementById('addButton');
+
+  if (Yes_No.value == 'Yes') {
+    addButton.style.display = 'block';
+  } else {
+    addButton.style.display = 'none';
+  }
+}
+
+    var workExperienceCount = 0;
+
+    function addWorkExperience() {
+      workExperienceCount++;
+
+      var container = document.getElementById('workExperienceContainer');
+
+      var workExperienceHTML = `
+    <div class="work-experience-item mb-3">
+      <div class="form-group">
+        <label for="job-title-${workExperienceCount}">Job Title</label>
+        <input type="text" class="form-control" id="job-title-${workExperienceCount}" name="job_titles[]" placeholder="Enter job title">
+      </div>
+      <div class="form-group">
+        <label for="company-name-${workExperienceCount}">Company Name</label>
+        <input type="text" class="form-control" id="company-name-${workExperienceCount}" name="company_names[]" placeholder="Enter company name">
+      </div>
+      <div class="form-group">
+        <label for="start-date-${workExperienceCount}">Start Date</label>
+        <input type="date" class="form-control" id="start-date-${workExperienceCount}" name="start_dates[]">
+      </div>
+      <div class="form-group">
+        <label for="end-date-${workExperienceCount}">End Date</label>
+        <input type="date" class="form-control" id="end-date-${workExperienceCount}" name="end_dates[]">
+      </div>
+      <div class="form-group">
+        <label for="job-description-${workExperienceCount}">Job Description</label>
+        <textarea class="form-control" id="job-description-${workExperienceCount}" name="job_descriptions[]" rows="3" placeholder="Enter job description"></textarea>
+      </div>
+      <br>
+      <button type="button" class="btn btn-danger btn-sm" onclick="removeWorkExperience(this)">Remove</button>
+    </div>
+  `;
+
+      var wrapper = document.createElement('div');
+      wrapper.innerHTML = workExperienceHTML;
+      container.appendChild(wrapper);
+    }
+
+    function removeWorkExperience(button) {
+      var itemToRemove = button.closest('.work-experience-item');
+      itemToRemove.remove();
+    }
+
+
     var currentStep = 1;
 
     function nextStep() {
@@ -182,7 +277,7 @@
     function validateStep(step) {
       var isValid = true;
       var inputs = document.getElementById('step' + step).querySelectorAll('input, select, textarea');
-      inputs.forEach(function(input) {
+      inputs.forEach(function (input) {
         if (input.hasAttribute('required') && !input.value.trim()) {
           isValid = false;
           input.classList.add('is-invalid');
@@ -193,4 +288,4 @@
       return isValid;
     }
   </script>
-@endsection
+  @endsection
