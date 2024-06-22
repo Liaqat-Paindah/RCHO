@@ -17,7 +17,7 @@
                 <h2 class="animate__animated animate__fadeInDown">Welcome to </h2>
                 <p class="animate__animated animate__fadeInUp">Afghanistan Research, Development & Health Organization
                 </p>
-                <a href="#about" class="btn-get-started scrollto animate__animated animate__fadeInUp">More Details</a>
+                <a href="{{ url('/about') }}" class="btn-get-started scrollto animate__animated animate__fadeInUp">More Details</a>
               </div>
             </div>
           </div>
@@ -25,11 +25,9 @@
           <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/2.jpg)">
             <div class="carousel-container">
               <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">At the heart of our endeavors lies the empowerment of
-                  women and girls, </h2>
-                <p class="animate__animated animate__fadeInUp">recognizing that true alleviation of poverty necessitates
-                  the attainment of equal rights and opportunities for all individuals.</p>
-                <a href="#about" class="btn-get-started scrollto animate__animated animate__fadeInUp">More Details</a>
+                <h2 class="animate__animated animate__fadeInDown"> We empower women and girls </h2>
+                <p class="animate__animated animate__fadeInUp">because achieving equal rights and opportunities for all is essential to alleviate poverty effectively.</p>
+                <a href="{{ url('/about') }}" class="btn-get-started scrollto animate__animated animate__fadeInUp">More Details</a>
               </div>
             </div>
           </div>
@@ -37,10 +35,9 @@
           <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/3.jpg)">
             <div class="carousel-container">
               <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Temporibus autem quibusdam</h2>
-                <p class="animate__animated animate__fadeInUp">Beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                  voluptatem</p>
-                <a href="#about" class="btn-get-started scrollto animate__animated animate__fadeInUp">More Details</a>
+                <h2 class="animate__animated animate__fadeInDown">Achieving true poverty</h2>
+                <p class="animate__animated animate__fadeInUp">alleviation requires equal rights and opportunities for all individuals.</p>
+                <a href="{{ url('/about') }}" class="btn-get-started scrollto animate__animated animate__fadeInUp">More Details</a>
               </div>
             </div>
           </div>

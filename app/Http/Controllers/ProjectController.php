@@ -24,4 +24,17 @@ class ProjectController extends Controller
         $projects=Project::where('status', 'Ongoing')->get();
         return view('project_on', compact('projects'));
     }
+    public function details($id)
+    {
+        $projects = Project::find($id);
+        return view('project_details', compact('projects'));
+        
+    
+    }
+    public function Show_details()
+    {
+        return view('project_details');
+
+    }
+
 }

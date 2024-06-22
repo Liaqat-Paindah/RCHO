@@ -27,7 +27,7 @@
                 <div class="icon">
                   <i class="bi bi-heart-pulse"></i>
                 </div>
-                <a href="service-details.html" class="stretched-link">
+                <a href="{{ url('/project_details',['id'=>$project->id]) }}" class="stretched-link">
                   <h3>{{$project->project_name}}</h3>
                 </a>
                 <p>{{$project->description}}</p>

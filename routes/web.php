@@ -18,7 +18,6 @@ use App\Http\Controllers\JobsController;
   //  return view('dashboard');
 //})->name('dashboard');
 
-Route::resource('users', UserController::class);
 Route::get('/project', [ProjectController::class, 'index']);
 Route::get('/project_ct', [ProjectController::class, 'completed']);
 Route::get('/project_on', [ProjectController::class, 'ongoing']);
@@ -36,6 +35,16 @@ Route::get('/career', [JobsController::class, 'index']);
 
 Route::get('/job-details/{id}', [JobsController::class, 'details']);
 Route::get('/job-details', [JobsController::class, 'Show_details']);
+
+
+Route::get('/project_details/{id}', [ProjectController::class, 'details']);
+Route::get('/project_details', [ProjectController::class, 'Show_details']);
+
+
+
+
+
+
 
 
 Route::post('/jobs', [JobsController::class, 'store']);
@@ -61,6 +70,7 @@ Route::get('/programs', function(){
 Route::get('/job-details', function(){
   return view('job-details');
 });
+
 
 
 

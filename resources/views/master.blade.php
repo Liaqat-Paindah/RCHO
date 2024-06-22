@@ -43,7 +43,7 @@
     <div class="container d-flex justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"> <img src="{{ url('assets/img/logo.png')}}" alt=""> </a></h1>
+        <h1><a href="{{ url('/')}}"> <img src="{{ url('assets/img/logo.png')}}" alt=""> </a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="{{ url('assets/img/logo.png')}}" alt="" class="img-fluid"></a>-->
       </div>
@@ -51,15 +51,14 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="{{url('/')}}">Home</a></li>
-          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="{{ url('/') }}"><span>About</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{{ url('/about') }}">Who we are</a></li>
               <li><a href="{{ url('/staff') }}">Staff</a></li>
               <li><a href="{{ url('/approach') }}">Approach</a></li>
-              <li><a href="#">Programs</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="{{ url('/') }}"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/services/humanitarian">Humanitarian</a></li>
               <li><a href="/services/Development">Development</a></li>
@@ -77,10 +76,10 @@
               <li><a href="{{ url('/project_on') }}">On-going</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>Pulications</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="{{ url('/') }}"><span>Pulications</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{{ url('/reports') }}">Reports</a></li>
-              <li><a href="#">Documents</a></li>
+              <li><a href="{{ url('/') }}">Documents</a></li>
               <li><a href="{{url('/stories')}}">Success Stories</a></li>
             </ul>
           </li>
@@ -114,34 +113,34 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Reports</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Careers</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/') }}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/about') }}">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/reports') }}">Reports</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/career') }}">Careers</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/about') }}">Privacy policy</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Humanitarian</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Research</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Health</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Education</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/humanitarian') }}">Humanitarian</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/Agriculture') }}">Agriculture  </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/Nutrition') }}">Nutrition</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/Health') }}">Health</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/Education') }}">Education</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Social Networks</h4>
-            <p>You can follow our social media accounts.</p>
+            <p>Stay connected with us! Follow our official social media accounts for the latest updates, news, and insights:</p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://x.com/ARDHO177016" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=61559738920399" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/ardho_afghanistan/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="{{ url('/') }}" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="https://www.linkedin.com/in/ardho-afghanistan-96239030b/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
           </div>
 
@@ -158,13 +157,13 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
-        Designed by <a href="#">ARDHO</a>
+        Designed by <a href="{{ url('/') }}">ARDHO</a>
       </div>
     </div>
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="{{ url('/') }}" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="{{ url('assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
