@@ -23,17 +23,13 @@
       @foreach($stories as $story)
       <div class="col-lg-4">
         <article>
-
           <div class="post-img">
             <img src="{{ $story->image}}" alt="" class="img-fluid">
           </div>
-
           <p class="post-category">Health </p>
-
           <h2 class="title">
-            <a href="b{{url('/')}}">{{ $story->story_title}}</a>
+            <a href="{{url('/stories_details', ['id'=>$story->id])}}">{{ $story->story_title}}</a>
           </h2>
-
           <div class="d-flex align-items-center">
             <img src="{{ $story->author_profile}}" alt="" class="img-fluid post-author-img flex-shrink-0">
             <div class="post-meta">

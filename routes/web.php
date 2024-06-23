@@ -22,6 +22,10 @@ Route::get('/project', [ProjectController::class, 'index']);
 Route::get('/project_ct', [ProjectController::class, 'completed']);
 Route::get('/project_on', [ProjectController::class, 'ongoing']);
 Route::get('/stories', [SuccessStoryController::class, 'index']);
+Route::get('/stories_details', [SuccessStoryController::class, 'details']);
+Route::get('/stories_details/{id}', [SuccessStoryController::class, 'show_details']);
+
+
 Route::get('/', [ReportController::class, 'index']);
 Route::get('/reports', [ReportController::class, 'show']);
 Route::get('/staff', [StaffController::class, 'index']);
@@ -32,11 +36,8 @@ Route::post('/donations/store', [DonationController::class, 'store'])->name('don
 Route::get('/donations/success', [DonationController::class, 'success'])->name('donations.success');
 Route::get('/donations/error', [DonationController::class, 'error'])->name('donations.error');
 Route::get('/career', [JobsController::class, 'index']);
-
 Route::get('/job-details/{id}', [JobsController::class, 'details']);
 Route::get('/job-details', [JobsController::class, 'Show_details']);
-
-
 Route::get('/project_details/{id}', [ProjectController::class, 'details']);
 Route::get('/project_details', [ProjectController::class, 'Show_details']);
 
