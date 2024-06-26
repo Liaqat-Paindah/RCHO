@@ -11,6 +11,8 @@ use App\Http\Controllers\SuccessStoryController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\JobsController;
+use App\Http\Controllers\RequestController;
+
 
 
 
@@ -24,10 +26,11 @@ Route::get('/project_on', [ProjectController::class, 'ongoing']);
 Route::get('/stories', [SuccessStoryController::class, 'index']);
 Route::get('/stories_details', [SuccessStoryController::class, 'details']);
 Route::get('/stories_details/{id}', [SuccessStoryController::class, 'show_details']);
-
-
 Route::get('/', [ReportController::class, 'index']);
-Route::get('/reports', [ReportController::class, 'show']);
+Route::post('/reports', [ReportController::class, 'show']);
+Route::get('/request', [RequestController::class, 'index']);
+Route::post('/request', [RequestController::class, 'show']);
+
 Route::get('/staff', [StaffController::class, 'index']);
 Route::get('/services/{category}', [ServiceController::class, 'index']);
 Route::get('services/{category}', [ServiceController::class, 'show']);
@@ -40,14 +43,6 @@ Route::get('/job-details/{id}', [JobsController::class, 'details']);
 Route::get('/job-details', [JobsController::class, 'Show_details']);
 Route::get('/project_details/{id}', [ProjectController::class, 'details']);
 Route::get('/project_details', [ProjectController::class, 'Show_details']);
-
-
-
-
-
-
-
-
 Route::post('/jobs', [JobsController::class, 'store']);
 Route::get('/jobs', function(){
   return view('jobs');

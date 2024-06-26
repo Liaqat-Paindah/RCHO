@@ -58,14 +58,15 @@
                         </div>
 
                     </div><!-- End Services List -->
-
+                    <a href="{{url('/request')}}">
                     <div class="help-box d-flex flex-column justify-content-center align-items-center">
                         <i class="bi bi-download help-icon"></i>
                         <br>
                         <h4>Request Profile?</h4>
-                        <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-phone me-2"></i><a href="">+93 (0) 202-503-850</a></p>
-                        <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a href="mailto: info@ardho.org"> info@ardho.org</a></p>
+                        <p style="color:white">Please click here for downloading Organization Profile</p>
                     </div>
+                </a>
+
 
                 </div>
 
