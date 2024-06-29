@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StaffController;
@@ -12,14 +11,9 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\RequestController;
-
-
-
-
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
   //  return view('dashboard');
 //})->name('dashboard');
-
 Route::get('/project', [ProjectController::class, 'index']);
 Route::get('/project_ct', [ProjectController::class, 'completed']);
 Route::get('/project_on', [ProjectController::class, 'ongoing']);
@@ -30,7 +24,6 @@ Route::get('/', [ReportController::class, 'index']);
 Route::post('/reports', [ReportController::class, 'show']);
 Route::get('/request', [RequestController::class, 'index']);
 Route::post('/request', [RequestController::class, 'show']);
-
 Route::get('/staff', [StaffController::class, 'index']);
 Route::get('/services/{category}', [ServiceController::class, 'index']);
 Route::get('services/{category}', [ServiceController::class, 'show']);

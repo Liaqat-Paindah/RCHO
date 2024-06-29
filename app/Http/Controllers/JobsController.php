@@ -38,7 +38,6 @@ class JobsController extends Controller
             'cv' => 'required',
             'letters' => 'required',
             'diploma' => 'required',
-            'transcript' => 'required',
             'tazkira' => 'required',
             'job_titles.*' => 'nullable|string',
             'company_names.*' => 'nullable|string',
@@ -51,7 +50,6 @@ class JobsController extends Controller
         $cvPath = $request->file('cv')->store('public\assets\img\applications');
         $letterPath = $request->file('letters')->store('public\assets\img\applications');
         $diplomaPath = $request->file('diploma')->store('public\assets\img\applications');
-        $transcriptPath = $request->file('transcript')->store('public\assets\img\applications');
         $tazkiraPath = $request->file('tazkira')->store('public\assets\img\applications');
 
         // Create Job instance
@@ -73,7 +71,6 @@ class JobsController extends Controller
         $job->cv = $cvPath;
         $job->letters = $letterPath;
         $job->diploma = $diplomaPath;
-        $job->transcript = $transcriptPath;
         $job->tazkira = $tazkiraPath;
 
 
