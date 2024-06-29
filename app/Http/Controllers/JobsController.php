@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Job;
 use App\Models\WorkExperience;
+use App\Models\CandidateReference;
 use App\Models\Career;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ConfirmationMail;
@@ -44,6 +45,17 @@ class JobsController extends Controller
             'start_dates.*' => 'nullable|date',
             'end_dates.*' => 'nullable|date',
             'job_descriptions.*' => 'nullable|string',
+            'reference_name.*' => 'required|string',
+            'reference_type.*' => 'required|string',
+            'relationship.*' => 'required|string',
+            'organization.*' => 'required|string',
+            'reference_email.*' => 'required|string',
+            'reference_phone.*' => 'required|string',
+            'position.*' => 'required|string',
+            'association_start.*' => 'required',
+            'association_end.*' => 'required',
+            'perspective.*' => 'required',
+
         ]);
 
         // Save  files
@@ -77,7 +89,7 @@ class JobsController extends Controller
         $job->save(); // Save the job first to get its ID
 
         // Save WorkExperiences if provided
-        if ($request->has('job_titles')) {
+        if ($request->filled('job_titles')) {
             $workExperiences = [];
             foreach ($request->job_titles as $key => $jobTitle) {
                 $workExperiences[] = new WorkExperience([
@@ -90,6 +102,29 @@ class JobsController extends Controller
             }
             $job->workExperiences()->saveMany($workExperiences); // Associate work experiences with the job
         }
+
+        // Save CandidateReferences if provided
+        if ($request->filled('reference_name')) {
+            $references = [];
+            foreach ($request->reference_name as $key => $referenceName) {
+                $references[] = new CandidateReference([
+                    'job_id' => $job->id,
+                    'reference_name' => $referenceName,
+                    'reference_type' => $request->reference_type[$key],
+                    'relationship' => $request->relationship[$key],
+                    'organization' => $request->organization[$key],
+                    'email' => $request->reference_email[$key],
+                    'phone' => $request->reference_phone[$key],
+                    'position' => $request->position[$key],
+                    'association_start' => $request->association_start[$key],
+                    'association_end' => $request->association_end[$key],
+                    'perspective' => $request->perspective[$key],
+        
+                ]);
+            }
+            $job->references()->saveMany($references); // Save all references associated with the job
+        }
+
 
         // Send confirmation email
         Mail::to($request->input('email'))->send(new ConfirmationMail());

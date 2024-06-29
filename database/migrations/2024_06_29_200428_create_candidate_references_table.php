@@ -15,6 +15,18 @@ class CreateCandidateReferencesTable extends Migration
     {
         Schema::create('candidate_references', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('job_id');
+            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
+            $table->string('reference_name');
+            $table->string('reference_type');
+            $table->string('relationship');
+            $table->string('organization');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('position');
+            $table->string('association_start');
+            $table->string('association_end');
+            $table->string('perspective');
             $table->timestamps();
         });
     }

@@ -307,12 +307,12 @@ function addReference() {
 
 <div class="form-group">
 <label for="email-${ReferenceCount}">Email</label>
-<input type="email" class="form-control" id="email-${ReferenceCount}" name="email[]" placeholder="Enter email address">
+<input type="email" class="form-control" id="email-${ReferenceCount}" name="reference_email[]" placeholder="Enter email address">
 </div>
 
 <div class="form-group">
 <label for="phone-${ReferenceCount}">Phone</label>
-<input type="number" class="form-control" id="phone-${ReferenceCount}" name="phone[]"  placeholder="Enter phone number">
+<input type="number" class="form-control" id="phone-${ReferenceCount}" name="reference_phone[]"  placeholder="Enter phone number">
 </div>
 
 <div class="form-group">
@@ -332,7 +332,7 @@ function addReference() {
 
 <div class="form-group">
 <label for="perspective_comments-${ReferenceCount}">Perspective Comments</label>
-<textarea class="form-control" id="perspective-comments-${workExperienceCount}" name="perspective-comments[]" rows="3" placeholder="Enter perspective comments"></textarea>
+<textarea class="form-control" id="perspective-comments-${workExperienceCount}" name="perspective[]" rows="3" placeholder="Enter perspective comments"></textarea>
 </div>
 
 
