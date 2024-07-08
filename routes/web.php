@@ -11,9 +11,22 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\RequestController;
-//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-  //  return view('dashboard');
-//})->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function()
+{
+  Route::get('/admin', function () {
+    return view('admin');
+});
+Route::get('/profile', function () {
+  return view('admin.profile');
+});
+
+
+
+
+});
+
+
 Route::get('/project', [ProjectController::class, 'index']);
 Route::get('/project_ct', [ProjectController::class, 'completed']);
 Route::get('/project_on', [ProjectController::class, 'ongoing']);
