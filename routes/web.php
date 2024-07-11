@@ -50,6 +50,7 @@ Route::get('/jobs', function(){
   return view('jobs');
 });
 // routes/web.php
+
 Route::get('/about', function(){
   return view('about');
 });
