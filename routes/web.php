@@ -20,10 +20,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function()
 Route::get('/profile', function () {
   return view('admin.profile');
 });
-
-
-
-
 });
 
 
@@ -53,9 +49,7 @@ Route::post('/jobs', [JobsController::class, 'store']);
 Route::get('/jobs', function(){
   return view('jobs');
 });
-
 // routes/web.php
-
 Route::get('/about', function(){
   return view('about');
 });
@@ -66,9 +60,7 @@ Route::get('/approach', function(){
 
 Route::get('/programs', function(){
   return view('programs');
-});
-
-
+}); 
 Route::get('/job-details', function(){
   return view('job-details');
 });
