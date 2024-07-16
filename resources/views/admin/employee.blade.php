@@ -20,47 +20,36 @@
             <h5 class="card-title">Employees:</h5>
 
             <!-- Table with stripped rows -->
-            <table class="table datatable">
-              <thead>
-                <tr>
-                  <th>
-                    Full Name
-                  </th>
-                  <th>Position</th>
-                  <th>Email</th>
-                  <th>Department</th>
-                  <th>Phone</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach($employees as $employee)
-                <tr>
-                  <td>{{$employee->first_name}} {{$employee->last_name}}</td>
-                  <td>{{$employee->job_title}}</td>
-                  <td>{{$employee->email}}</td>
-                  <td>{{$employee->department_id}}</td>
-                  <td>{{$employee->phone_number}}</td>
-                  <th>
-                    <div class="action-menu">
-                      <div class="action-item">
-                        <span class="action-label btn btn-outline-success btn-sm">Action</span>
-                        <div class="action-options">
-                          <a href="#" class="action-option">Edit</a>
-                          <a href="#" class="action-option">Delete</a>
-                          <a href="{{ url('employee_details', ['id'=>$employee->id]) }}" class="action-option">More
-                            details</a>
-
-                        </div>
-                      </div>
-                    </div>
-                  </th>
-
-                </tr>
-                @endforeach
-
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th>
+                      Full Name
+                    </th>
+                    <th>Position</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach($employees as $employee)
+                  <tr>
+                    <td>{{$employee->first_name}} {{$employee->last_name}}</td>
+                    <td>{{$employee->job_title}}</td>
+                    <td>{{$employee->email}}</td>
+                    <td>{{$employee->department_id}}</td>
+                    <td>{{$employee->status}}</td>
+                    <td>  <a href="{{ url('employee_details', ['id'=>$employee->id]) }}"  class="btn btn-outline-success btn-sm">Details</a>  </td>
+  
+                  </tr>
+                  @endforeach
+  
+                </tbody>
+              </table>
+            </div>
             <!-- End Table with stripped rows -->
 
           </div>

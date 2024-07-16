@@ -13,20 +13,24 @@ use App\Http\Controllers\JobsController;
 use App\Http\Controllers\RequestController;
 // admin pages
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\AdminController;
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function()
 {
-  Route::get('/admin', function () {
-    return view('admin');
-});
+
 Route::get('/profile', function () {
   return view('admin.profile');
 });
+Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/employee', [EmployeeController::class, 'index']);
-Route::get('/employee_details', function () {
-  return view('admin.employee_details');
-});
+Route::get('/employee_details/{id}', [EmployeeController::class, 'details']);
+Route::get('/employee_details', [EmployeeController::class, 'Show_details']);
+Route::put('/employee_edit/{employee}', [EmployeeController::class, 'update']);
+Route::delete('/employee_delete/{id}', [EmployeeController::class, 'delete']);
+Route::get('/employee_delete/{id}', [EmployeeController::class, 'show_delete']);
+
 
 
 

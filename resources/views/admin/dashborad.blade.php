@@ -14,20 +14,20 @@
   <link href="{{ url('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="{{ url('https://fonts.gstatic.com') }}" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets_admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets_admin/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets_admin/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets_admin/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets_admin/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets_admin/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets_admin/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="{{ url('assets_admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url('assets_admin/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url('assets_admin/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url('assets_admin/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+  <link href="{{ url('assets_admin/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+  <link href="{{ url('assets_admin/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ url('assets_admin/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets_admin/css/style.css" rel="stylesheet">
+  <link href="{{ url('assets_admin/css/style.css') }}" rel="stylesheet">
   <script>
     document.addEventListener("DOMContentLoaded", function() {
     // Example: Add active class to the current page link based on URL
@@ -226,7 +226,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="{{Auth::user()->profile_photo_path}}" alt="Profile" class="rounded-circle">
+            <img src="..\{{Auth::user()->profile_photo_path}}" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">{{Auth::user()->name}}</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -473,17 +473,17 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets_admin/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="assets_admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets_admin/vendor/chart.js/chart.umd.js"></script>
-  <script src="assets_admin/vendor/echarts/echarts.min.js"></script>
-  <script src="assets_admin/vendor/quill/quill.js"></script>
-  <script src="assets_admin/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="assets_admin/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets_admin/vendor/php-email-form/validate.js"></script>
+  <script src="{{ url('assets_admin/vendor/apexcharts/apexcharts.min.js') }}"></script>
+  <script src="{{ url('assets_admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url('assets_admin/vendor/chart.js') }}/chart.umd.js') }}"></script>
+  <script src="{{ url('assets_admin/vendor/echarts/echarts.min.js') }}"></script>
+  <script src="{{ url('assets_admin/vendor/quill/quill.js') }}"></script>
+  <script src="{{ url('assets_admin/vendor/simple-datatables/simple-datatables.js') }}"></script>
+  <script src="{{ url('assets_admin/vendor/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ url('assets_admin/vendor/php-email-form/validate.js') }}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets_admin/js/main.js"></script>
+  <script src="{{ url('assets_admin/js/main.js') }}"></script>
 
 </body>
 
