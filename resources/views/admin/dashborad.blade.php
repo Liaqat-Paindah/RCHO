@@ -28,6 +28,22 @@
 
   <!-- Template Main CSS File -->
   <link href="assets_admin/css/style.css" rel="stylesheet">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Example: Add active class to the current page link based on URL
+    var currentUrl = window.location.href;
+    var navLinks = document.querySelectorAll('.sidebar-nav .nav-item .nav-link');
+
+    navLinks.forEach(function(link) {
+        if (link.href === currentUrl) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+});
+
+  </script>
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -270,50 +286,28 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="{{ url('/admin ') }}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
+
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Employees</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link " href="{{ url('/employee') }}">
+          <i class="bi bi-person"></i>
+          <span>Employees</span>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Departments</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Job Positions</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Leave </span>
-            </a>
-          </li>
-          <li>
-            <a href="components-breadcrumbs.html">
-              <i class="bi bi-bank"></i><span>Payroll </span>
-            </a>
-          </li>
-          <li>
-            <a href="components-buttons.html">
-              <i class="bi bi-circle"></i><span>Attendance</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-cards.html">
-              <i class="bi bi-circle"></i><span>Users</span>
-            </a>
-          </li>
-          
-        </ul>
-      </li><!-- End Components Nav -->
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " href="{{ url('/profile') }}">
+          <i class="bi bi-journal-text"></i>
+          <span>Departments</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">

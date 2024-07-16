@@ -20,7 +20,7 @@ body {
 }
 
 a {
-  color: #00a858;
+  color: #01170c;
   text-decoration: none;
 }
 
@@ -104,6 +104,41 @@ h6 {
 # Override some default Bootstrap stylings
 --------------------------------------------------------------*/
 /* Dropdown menus */
+.action-menu {
+  display: inline-block;
+  position: relative;
+}
+
+.action-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.action-options {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.action-options a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.action-options a:hover {
+  background-color: #ddd;
+}
+
+.action-menu:hover .action-options {
+  display: block;
+}
+
+
 .dropdown-menu {
   border-radius: 4px;
   padding: 10px 0;
@@ -684,26 +719,26 @@ h6 {
   align-items: center;
   font-size: 15px;
   font-weight: 600;
-  color: #00a858;
-  transition: 0.3;
-  background: #f6f9ff;
+  transition: 0.3s;
   padding: 10px 15px;
   border-radius: 4px;
+  color: #01170c;
+  background: #fff;
 }
 
 .sidebar-nav .nav-link i {
   font-size: 16px;
   margin-right: 10px;
-  color: #00a858;
-}
-
-.sidebar-nav .nav-link.collapsed {
-  color: #01170c;
-  background: #fff;
-}
-
-.sidebar-nav .nav-link.collapsed i {
   color: #899bbd;
+}
+
+.sidebar-nav .nav-link.active {
+  color: #019a50;
+  background: #f6f9ff; /* Light green background */
+}
+
+.sidebar-nav .nav-link.active i {
+  color: #00a858;
 }
 
 .sidebar-nav .nav-link:hover {
@@ -720,7 +755,7 @@ h6 {
   transition: transform 0.2s ease-in-out;
 }
 
-.sidebar-nav .nav-link:not(.collapsed) .bi-chevron-down {
+.sidebar-nav .nav-link.active .bi-chevron-down {
   transform: rotate(180deg);
 }
 
@@ -735,10 +770,9 @@ h6 {
   align-items: center;
   font-size: 14px;
   font-weight: 600;
-  color: #019a50;
-  transition: 0.3;
-  padding: 10px 0 10px 40px;
   transition: 0.3s;
+  padding: 10px 0 10px 40px;
+  color: #00a858;
 }
 
 .sidebar-nav .nav-content a i {
@@ -746,6 +780,7 @@ h6 {
   margin-right: 8px;
   line-height: 0;
   border-radius: 50%;
+  color: #00a858;
 }
 
 .sidebar-nav .nav-content a:hover,
@@ -755,8 +790,8 @@ h6 {
 
 .sidebar-nav .nav-content a.active i {
   background-color: #00a858;
+  color: #fff;
 }
-
 /*--------------------------------------------------------------
 # Dashboard
 --------------------------------------------------------------*/

@@ -28,6 +28,7 @@ class CreateEmployeesTable extends Migration
             $table->string('job_title');
             $table->foreignId('department_id')->constrained()->onDelete('cascade');
             $table->date('joining_date');
+            $table->text('image');
             $table->enum('status', ['Active', 'Inactive']);
             $table->timestamps();
         });

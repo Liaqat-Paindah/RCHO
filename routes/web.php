@@ -11,6 +11,9 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\RequestController;
+// admin pages
+use App\Http\Controllers\EmployeeController;
+
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function()
 {
@@ -20,6 +23,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function()
 Route::get('/profile', function () {
   return view('admin.profile');
 });
+Route::get('/employee', [EmployeeController::class, 'index']);
+Route::get('/employee_details', function () {
+  return view('admin.employee_details');
+});
+
+
+
 });
 
 
@@ -49,6 +59,7 @@ Route::post('/jobs', [JobsController::class, 'store']);
 Route::get('/jobs', function(){
   return view('jobs');
 });
+
 // routes/web.php
 
 Route::get('/about', function(){
@@ -61,7 +72,9 @@ Route::get('/approach', function(){
 
 Route::get('/programs', function(){
   return view('programs');
-}); 
+});
+
+
 Route::get('/job-details', function(){
   return view('job-details');
 });
