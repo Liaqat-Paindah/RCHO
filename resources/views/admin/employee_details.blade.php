@@ -1,254 +1,265 @@
 @extends('admin.dashborad')
 @section('contents')
 
-<main id="main" class="main">
+<div class="page-wrapper">
 
-<div class="pagetitle">
-  <nav>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ url('/admin')}}">Dashborad</a></li>
-      <li class="breadcrumb-item"><a href="{{ url('/employee')}}">Employees</a></li>
-      <li class="breadcrumb-item active">More Details</li>
-    </ol>
-  </nav>
-</div><!-- End Page Title -->
+  <div class="content container-fluid">
 
-<section class="section profile">
-  <div class="row">
-    <div class="col-xl-12">
-
-      <div class="card">
-        <div class="card-body pt-3">
-          <!-- Bordered Tabs -->
-          <ul class="nav nav-tabs nav-tabs-bordered">
-
-            <li class="nav-item">
-              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
-            </li>
-
-            <li class="nav-item">
-              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Emergency Contacts</button>
-            </li>
-            <li class="nav-item">
-              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Edit Information </button>
-            </li>
-            <li class="nav-item">
-              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#settings">Settings</button>
-            </li>
-
-
+    <div class="page-header">
+      <div class="row ">
+        <div class="col-sm-12">
+          <h3 class="page-title">Profile</h3>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item active">Profile</li>
           </ul>
-          <div class="tab-content pt-2">
+        </div>
+      </div>
+    </div>
 
-            <div class="tab-pane fade show active profile-overview" id="profile-overview">
-              <h5 class="card-title">Employee Details</h5>
+    <div class="card mb-0">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="profile-view">
+              <div class="profile-img-wrap">
+                <div class="profile-img">
+                  <a href="#"><img alt="" src="..\{{$employee->image}}"></a>
+                </div>
+              </div>
+              <div class="profile-basic">
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="profile-info-left">
+                      <h3 class="user-name m-t-0 mb-0">{{$employee->first_name}} {{$employee->last_name}}</h3>
+                      <h6 class="text-muted">{{$employee->job_title}}</h6>
+                      <small class="text-muted">IT Department</small>
 
-              <div class="row">
-                <div class="col-lg-9 col-md-8"> <img src="..\{{$employee->image}}" alt="Profile" class="profile_emp col col-sm-2"> </div>
+                      <div class="staff-id">Employee ID : FT-0001{{$employee->id}}</div>
+                      <div class="small doj text-muted">Date of Join : {{$employee->joining_date}}</div>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <ul class="personal-info">
+                      <li>
+                        <div class="title">Phone:</div>
+                        <div class="text">{{$employee->phone_number}}</div>
+                      </li>
+                      <li>
+                        <div class="title">Email:</div>
+                        <div class="text">{{$employee->email}}</div>
+                      </li>
+                      <li>
+                        <div class="title">Birthday:</div>
+                        <div class="text">{{$employee->date_of_birth}}</div>
+                      </li>
+                      <li>
+                        <div class="title">Address:</div>
+                        <div class="text">{{$employee->address}}</div>
+                      </li>
+                      <li>
+                        <div class="title">Gender:</div>
+                        <div class="text">{{$employee->gender}}</div>
+                      </li>
+                      <li>
+                        <div class="title">Stutes:</div>
+                        <div class="text">{{$employee->status}}</div>
+                      </li>
+
+                      <li>
+                        <div class="title">Nationality:</div>
+                        <div class="text">{{$employee->nationality}}</div>
+                      </li>
+                  </div>
+
+
+                </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                <div class="col-lg-9 col-md-8">{{$employee->first_name}} {{$employee->last_name}}</div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-3 col-md-4 label">Position</div>
-                <div class="col-lg-9 col-md-8">{{$employee->job_title}}</div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-3 col-md-4 label">Phone</div>
-                <div class="col-lg-9 col-md-8">{{$employee->phone_number}}</div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-3 col-md-4 label">Gender</div>
-                <div class="col-lg-9 col-md-8">{{$employee->gender}}</div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-3 col-md-4 label">Date of Birth</div>
-                <div class="col-lg-9 col-md-8">{{$employee->date_of_birth}}</div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-3 col-md-4 label">Nationality</div>
-                <div class="col-lg-9 col-md-8">{{$employee->nationality}}</div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-3 col-md-4 label">Department</div>
-                <div class="col-lg-9 col-md-8">{{$employee->department_id}}</div>
-              </div>
-              <div class="row">
-                <div class="col-lg-3 col-md-4 label">Joining Date</div>
-                <div class="col-lg-9 col-md-8">{{$employee->joining_date}}</div>
-              </div>
-              <div class="row">
-                <div class="col-lg-3 col-md-4 label">Address</div>
-                <div class="col-lg-9 col-md-8">{{$employee->address}}</div>
-              </div>
-
+              <div class="pro-edit"><a data-target="#profile_info" data-toggle="modal" class="edit-icon" href="#"><i
+                    class="fa fa-pencil"></i></a></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12 d-flex">
+        <div class="card profile-box flex-fill">
+          <div class="card-body">
+            <h3 class="card-title">Emergency Contact<a href="#" class="edit-icon" data-toggle="modal"
+                data-target="#education_info"></a></h3>
+            <div class="experience-box">
+              <ul class="experience-list">
+                <li>
+                  <div class="experience-user">
+                    <div class="before-circle"></div>
+                  </div>
+                  <div class="experience-content">
+                    <div class="timeline-content">
+                      <a href="#/" class="name">Emergency Contact Name:</a>
+                      <div>{{$employee->emergency_contact_name}}</div>
+                      <br>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="experience-user">
+                    <div class="before-circle"></div>
+                  </div>
+                  <div class="experience-content">
+                    <div class="timeline-content">
+                      <a href="#/" class="name">mergency Contact Number:</a>
+                      <div>{{$employee->emergency_contact_number}}</div>
 
-            <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
-              <div class="row">
-                <div class="col-lg-5 col-md-4 label ">Emergency Contact Name</div>
-                <div class="col-lg-7 col-md-8">{{$employee->emergency_contact_name}} </div>
-              </div>
-                <br>
-              <div class="row">
-                <div class="col-lg-5 col-md-4 label ">Emergency Contact Number</div>
-                <div class="col-lg-7 col-md-8">{{$employee->emergency_contact_number}} </div>
-              </div>
-              <br>
-
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <div class="tab-pane fade pt-3" id="profile-settings">
-                  <!-- Profile Edit Form -->
-                  <form action="{{ url('employee_edit', $employee->id) }}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
-                    <div class="row mb-3">
-                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
-                      <div class="col-md-8 col-lg-9">
-                        <img src="..\{{$employee->image}}" alt="Profile" class="col-lg-2">
-                        <div class="pt-2">
-                          <a href="#" class="btn btn-success btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
+    <div id="profile_info" class="modal custom-modal fade" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Profile Information</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="{{ url('employee_edit', $employee->id) }}" method="post" enctype="multipart/form-data">
+              @csrf
+              @method('PUT')
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="profile-img-wrap edit-img">
+                    <img class="inline-block"  src="..\{{$employee->image}}" alt="user">
+                    <div class="fileupload btn">
+                      <span class="btn-text">edit</span>
+                      <input class="upload" type="file" name="profile_image"  value="{{$employee->image}}" >
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" name="first_name" value="{{$employee->first_name}}">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" name="last_name" value="{{$employee->last_name}}">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label> Date of Birth</label>
+                        <div class="cal-icon">
+                          <input class="form-control datetimepicker" type="text" name="date_of_birth" value="{{$employee->date_of_birth}}">
                         </div>
                       </div>
                     </div>
-
-                    <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">First Name</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="first_name" type="text" class="form-control" id="first_name" value="{{$employee->first_name}}">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label> Gender</label>
+                          <input class="form-control" type="text" name="gender" value="{{$employee->gender}}">
+                        </div>
                       </div>
                     </div>
-
-                    <div class="row mb-3">
-                      <label for="about" class="col-md-4 col-lg-3 col-form-label">Last Name</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="last_name" type="text" class="form-control" id="last_name" value="{{$employee->last_name}}">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="company" class="col-md-4 col-lg-3 col-form-label">Email</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="email" type="text" class="form-control" id="company" value="{{$employee->email}}">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Job" class="col-md-4 col-lg-3 col-form-label">Gender:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="gender" type="text" class="form-control" id="Job" value="{{$employee->gender}}">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Country" class="col-md-4 col-lg-3 col-form-label">DOB:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="date_of_birth" type="text" class="form-control" id="Country" value="{{$employee->date_of_birth}}">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Address" class="col-md-4 col-lg-3 col-form-label">Nationality:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="nationality" type="text" class="form-control" id="Address" value="{{$employee->nationality}}">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Address:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="address" type="text" class="form-control" id="Phone" value="{{$employee->address}}">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Email" class="col-md-4 col-lg-3 col-form-label">Phone Number:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="phone_number" type="number " class="form-control" id="Email" value="{{$employee->phone_number}}">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Emergency Contact Name</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="emergency_contact_name" type="text" class="form-control" id="Twitter" value="{{$employee->emergency_contact_name}}">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Emergency Contact Number</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="emergency_contact_number" type="text" class="form-control" id="Facebook" value="{{$employee->emergency_contact_number}}">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="job_title" class="col-md-4 col-lg-3 col-form-label">Position:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="job_title" type="text" class="form-control" id="Instagram" value="{{$employee->job_title}}">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="joining_date" class="col-md-4 col-lg-3 col-form-label">Joining Date:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="joining_date" type="date" class="form-control" id="Linkedin" value="{{$employee->joining_date}}">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="joining_date" class="col-md-4 col-lg-3 col-form-label">Department:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="department_id" type="text" class="form-control" id="Linkedin" value="{{$employee->department_id}}">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="joining_date" class="col-md-4 col-lg-3 col-form-label">Status:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="status" type="text" class="form-control" id="Linkedin" value="{{$employee->status}}">
-                      </div>
-                    </div>
-
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-success">Save Changes</button>
-                    </div>
-                  </form><!-- End Profile Edit Form -->
-
-
-            </div>
-
-          </div><!-- End Bordered Tabs -->
-
-          <div class="tab-pane fade pt-3" id="settings">
-
-            <!-- Settings Form -->
-            <form>
-
-              <div class="row mb-3">
-                <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Delete Employee: </label>
-                <div class="col-md-8 col-lg-9 mt-2">
-                  <a href="{{ url('employee_delete', ['id'=>$employee->id]) }}" class="btn btn-danger btn-sm"> <i class="bi bi-trash"></i> </a>
+                  </div>
                 </div>
-            </form><!-- End settings Form -->
+              </div>
+              <div class="row p-4">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" name="address" value="{{$employee->address}}">
+                  </div>
+                </div>
+              </div>
+                <div class="row p-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" name="email" value="{{$employee->email}}">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" class="form-control" name="phone_number" value="{{$employee->phone_number}}">
+                  </div>
+                </div>
+              </div>
+              <div class="row p-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Nationality</label>
+                    <input type="text" class="form-control" name="nationality" value="{{$employee->nationality}}">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Job Title</label>
+                    <input type="text" class="form-control" name="job_title" value="{{$employee->job_title}}">
+                  </div>
+                </div>
+              </div>
+              <div class="row p-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Joining Date</label>
+                    <input type="text" class="form-control datetimepicker" name="joining_date" value="{{$employee->joining_date}}">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Status</label>
+                    <input type="text" class="form-control " name="status" value="{{$employee->status}}">
+                  </div>
+                </div>
+              </div>
+              <div class="row p-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Department</label>
+                    <input type="text" class="form-control " name="department_id" value="{{$employee->department_id}}">
+                  </div>
+                </div>
 
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Emergency Contact Name</label>
+                    <input type="text" class="form-control " name="emergency_contact_name" value="{{$employee->emergency_contact_name}}">
+                  </div>
+                </div>
+              </div>
+              <div class="row p-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Emergency Contact Number</label>
+                    <input type="text" class="form-control " name="emergency_contact_number" value="{{$employee->emergency_contact_number}}">
+                  </div>
+                </div>
+
+                <div class="submit-section">
+                  <button class="btn btn-primary submit-btn">Submit</button>
+                </div>
+              </div>
+
+            </form>
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
-</section>
-
-</main><!-- End #main -->
-@endsection
+  </main><!-- End #main -->
+  @endsection

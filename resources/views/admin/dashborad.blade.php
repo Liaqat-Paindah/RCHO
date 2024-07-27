@@ -3,488 +3,362 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <meta name="description" content="Smarthr - Bootstrap Admin Template">
+  <meta name="keywords"
+    content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
+  <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+  <meta name="robots" content="noindex, nofollow">
+  <title>HRMIS</title>
 
-  <title>HRMIS - ARDHO</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets_admin/img/favicon.png')}}">
 
-  <!-- Favicons -->
-  <link href="{{ url('assets/img/favicon.png')}}" rel="icon">
-  <link href="{{ url('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link rel="stylesheet" href="{{ url('assets_admin/css/bootstrap.min.css')}}">
 
-  <!-- Google Fonts -->
-  <link href="{{ url('https://fonts.gstatic.com') }}" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url('assets_admin/css/font-awesome.min.css')}}">
 
-  <!-- Vendor CSS Files -->
-  <link href="{{ url('assets_admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ url('assets_admin/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-  <link href="{{ url('assets_admin/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-  <link href="{{ url('assets_admin/vendor/quill/quill.snow.css') }}" rel="stylesheet">
-  <link href="{{ url('assets_admin/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
-  <link href="{{ url('assets_admin/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-  <link href="{{ url('assets_admin/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url('assets_admin/css/line-awesome.min.css')}}">
 
-  <!-- Template Main CSS File -->
-  <link href="{{ url('assets_admin/css/style.css') }}" rel="stylesheet">
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    // Example: Add active class to the current page link based on URL
-    var currentUrl = window.location.href;
-    var navLinks = document.querySelectorAll('.sidebar-nav .nav-item .nav-link');
+  <link rel="stylesheet" href="{{ url('assets_admin/css/select2.min.css')}}">
 
-    navLinks.forEach(function(link) {
-        if (link.href === currentUrl) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
-});
+  <link rel="stylesheet" href="{{ url('assets_admin/css/bootstrap-datetimepicker.min.css')}}">
 
-  </script>
+  <link rel="stylesheet" href="{{ url('assets_admin/css/style.css')}}">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Apr 20 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!--[if lt IE 9]>
+			<script src="{{ url('assets_admin/js/html5shiv.min.js')}}"></script>
+			<script src="{{ url('assets_admin/js/respond.min.js')}}"></script>
+		<![endif]-->
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
+  <div class="main-wrapper">
 
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <span class="d-none d-lg-block">HRMIS</span>
+    <div class="header">
+
+      <div class="header-left">
+        <a href="index.html" class="logo">
+          <img src="{{ url('assets_admin/img/logo.png')}}" width="40" height="40" alt="">
+        </a>
+      </div>
+
+      <a id="toggle_btn" href="javascript:void(0);">
+        <span class="bar-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
       </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
 
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
+      <div class="page-title-box">
+        <h3>ARDHO</h3>
+      </div>
 
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
+      <a id="mobile_btn" class="mobile_btn" href="#sidebar"><i class="fa fa-bars"></i></a>
 
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
-          </a>
-        </li><!-- End Search Icon-->
+      <ul class="nav user-menu">
 
-        <li class="nav-item dropdown">
-
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-            <span class="badge bg-primary badge-number">4</span>
-          </a><!-- End Notification Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-            <li class="dropdown-header">
-              You have 4 new notifications
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-exclamation-circle text-warning"></i>
-              <div>
-                <h4>Lorem Ipsum</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>30 min. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-x-circle text-danger"></i>
-              <div>
-                <h4>Atque rerum nesciunt</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>1 hr. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-check-circle text-success"></i>
-              <div>
-                <h4>Sit rerum fuga</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>2 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-info-circle text-primary"></i>
-              <div>
-                <h4>Dicta reprehenderit</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>4 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li class="dropdown-footer">
-              <a href="#">Show all notifications</a>
-            </li>
-
-          </ul><!-- End Notification Dropdown Items -->
-
-        </li><!-- End Notification Nav -->
-
-        <li class="nav-item dropdown">
-
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-chat-left-text"></i>
-            <span class="badge bg-success badge-number">3</span>
-          </a><!-- End Messages Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-            <li class="dropdown-header">
-              You have 3 new messages
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="assets_admin/img/messages-1.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Maria Hudson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>4 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="assets_admin/img/messages-2.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Anna Nelson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>6 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="assets_admin/img/messages-3.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>David Muldon</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>8 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="dropdown-footer">
-              <a href="#">Show all messages</a>
-            </li>
-
-          </ul><!-- End Messages Dropdown Items -->
-
-        </li><!-- End Messages Nav -->
-
-        <li class="nav-item dropdown pe-3">
-
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="..\{{Auth::user()->profile_photo_path}}" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">{{Auth::user()->name}}</span>
-          </a><!-- End Profile Iamge Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6>{{Auth::user()->name}}</h6>
-              <span>{{Auth::user()->email}}</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            @if(Route::has('login'))
-            @auth
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="{{ url('/profile') }}">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="{{ url('/profile') }}">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-
-            <li>
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-
-                <button type="submit" class="dropdown-item d-flex align-items-center">
-                <i class="bi bi-box-arrow-right"></i>
-                    {{ __('Log Out') }}
-                </button>
+        <li class="nav-item">
+          <div class="top-nav-search">
+            <a href="javascript:void(0);" class="responsive-search">
+              <i class="fa fa-search"></i>
+            </a>
+            <form action="search.html">
+              <input class="form-control" type="text" placeholder="Search here">
+              <button class="btn" type="submit"><i class="fa fa-search"></i></button>
             </form>
-            </li>
-            @endif
-            
-            @endif
+          </div>
+        </li>
 
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
 
+
+        <li class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+            <i class="fa fa-bell-o"></i> <span class="badge badge-pill">3</span>
+          </a>
+          <div class="dropdown-menu notifications">
+            <div class="topnav-dropdown-header">
+              <span class="notification-title">Notifications</span>
+              <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+            </div>
+            <div class="noti-content">
+              <ul class="notification-list">
+                <li class="notification-message">
+                  <a href="activities.html">
+                    <div class="media">
+                      <span class="avatar">
+                        <img alt="" src="{{ url('assets_admin/img/profiles/liaqat.jpg')}}')}}">
+                      </span>
+                      <div class="media-body">
+                        <p class="noti-details"><span class="noti-title">John Doe</span> added new task <span
+                            class="noti-title">Patient appointment booking</span></p>
+                        <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="notification-message">
+                  <a href="activities.html">
+                    <div class="media">
+                      <span class="avatar">
+                        <img alt="" src="{{ url('assets_admin/img/profiles/liaqat.jpg')}}')}}">
+                      </span>
+                      <div class="media-body">
+                        <p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name
+                          <span class="noti-title">Appointment booking with payment gateway</span></p>
+                        <p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="notification-message">
+                  <a href="activities.html">
+                    <div class="media">
+                      <span class="avatar">
+                        <img alt="" src="{{ url('assets_admin/img/profiles/liaqat.jpg')}}">
+                      </span>
+                      <div class="media-body">
+                        <p class="noti-details"><span class="noti-title">Misty Tison</span> added <span
+                            class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span>
+                          to project <span class="noti-title">Doctor available module</span></p>
+                        <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="notification-message">
+                  <a href="activities.html">
+                    <div class="media">
+                      <span class="avatar">
+                        <img alt="" src="{{ url('assets_admin/img/profiles/liaqat.jpg')}}">
+                      </span>
+                      <div class="media-body">
+                        <p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span
+                            class="noti-title">Patient and Doctor video conferencing</span></p>
+                        <p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="notification-message">
+                  <a href="activities.html">
+                    <div class="media">
+                      <span class="avatar">
+                        <img alt="" src="{{ url('assets_admin/img/profiles/liaqat.jpg')}}">
+                      </span>
+                      <div class="media-body">
+                        <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span
+                            class="noti-title">Private chat module</span></p>
+                        <p class="noti-time"><span class="notification-time">2 days ago</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="topnav-dropdown-footer">
+              <a href="activities.html">View all Notifications</a>
+            </div>
+          </div>
+        </li>
+
+
+        <li class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+            <i class="fa fa-comment-o"></i> <span class="badge badge-pill">8</span>
+          </a>
+          <div class="dropdown-menu notifications">
+            <div class="topnav-dropdown-header">
+              <span class="notification-title">Messages</span>
+              <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+            </div>
+            <div class="noti-content">
+              <ul class="notification-list">
+                <li class="notification-message">
+                  <a href="chat.html">
+                    <div class="list-item">
+                      <div class="list-left">
+                        <span class="avatar">
+                          <img alt="" src="{{ url('assets_admin/img/profiles/liaqat.jpg')}}">
+                        </span>
+                      </div>
+                      <div class="list-body">
+                        <span class="message-author">Richard Miles </span>
+                        <span class="message-time">12:28 AM</span>
+                        <div class="clearfix"></div>
+                        <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="notification-message">
+                  <a href="chat.html">
+                    <div class="list-item">
+                      <div class="list-left">
+                        <span class="avatar">
+                          <img alt="" src="{{ url('assets_admin/img/profiles/liaqat.jpg')}}">
+                        </span>
+                      </div>
+                      <div class="list-body">
+                        <span class="message-author">John Doe</span>
+                        <span class="message-time">6 Mar</span>
+                        <div class="clearfix"></div>
+                        <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="notification-message">
+                  <a href="chat.html">
+                    <div class="list-item">
+                      <div class="list-left">
+                        <span class="avatar">
+                          <img alt="" src="{{ url('assets_admin/img/profiles/liaqat.jpg')}}">
+                        </span>
+                      </div>
+                      <div class="list-body">
+                        <span class="message-author"> Tarah Shropshire </span>
+                        <span class="message-time">5 Mar</span>
+                        <div class="clearfix"></div>
+                        <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="notification-message">
+                  <a href="chat.html">
+                    <div class="list-item">
+                      <div class="list-left">
+                        <span class="avatar">
+                          <img alt="" src="{{ url('assets_admin/img/profiles/liaqat.jpg')}}">
+                        </span>
+                      </div>
+                      <div class="list-body">
+                        <span class="message-author">Mike Litorus</span>
+                        <span class="message-time">3 Mar</span>
+                        <div class="clearfix"></div>
+                        <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="notification-message">
+                  <a href="chat.html">
+                    <div class="list-item">
+                      <div class="list-left">
+                        <span class="avatar">
+                          <img alt="" src="{{ url('assets_admin/img/profiles/liaqat.jpg')}}">
+                        </span>
+                      </div>
+                      <div class="list-body">
+                        <span class="message-author"> Catherine Manseau </span>
+                        <span class="message-time">27 Feb</span>
+                        <div class="clearfix"></div>
+                        <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="topnav-dropdown-footer">
+              <a href="chat.html">View all Messages</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown has-arrow main-drop">
+          <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+            <span class="user-img"><img src="{{ url('assets_admin/img/profiles/liaqat.jpg')}}" alt="">
+              <span class="status online"></span></span>
+            <span>Liaqat</span>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="profile.html">My Profile</a>
+            <a class="dropdown-item" href="settings.html">Settings</a>
+            <a class="dropdown-item" href="login.html">Logout</a>
+          </div>
+        </li>
       </ul>
-    </nav><!-- End Icons Navigation -->
-
-  </header><!-- End Header -->
-
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
-
-    <ul class="sidebar-nav" id="sidebar-nav">
-
-      <li class="nav-item">
-        <a class="nav-link " href="{{ url('/admin ') }}">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
 
 
-      <li class="nav-item">
-        <a class="nav-link " href="{{ url('/employee') }}">
-          <i class="bi bi-person"></i>
-          <span>Employees</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
+      <div class="dropdown mobile-user-menu">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
+            class="fa fa-ellipsis-v"></i></a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="profile.html">My Profile</a>
+          <a class="dropdown-item" href="settings.html">Settings</a>
+          <a class="dropdown-item" href="login.html">Logout</a>
+        </div>
+      </div>
 
-      <li class="nav-item">
-        <a class="nav-link " href="{{ url('/profile') }}">
-          <i class="bi bi-journal-text"></i>
-          <span>Departments</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
+    </div>
 
 
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+          <ul>
+            <li class="menu-title">
+            </li>
+            <li class="submenu">
+              <a href="{{ url('/admin')}}"><i class="la la-dashboard"></i> <span>Dashboard</span></a>
+            </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Departments</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Positions</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Leave</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-bank"></i><span>Payroll</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Attendance</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
+            <li class="submenu">
+              <a href="{{ url('/employee')}}"><i class="la la-user"></i> <span>Employee</span></a>
+            </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Attendance</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Positions</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-echarts.html">
-              <i class="bi bi-circle"></i><span>ECharts</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Charts Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-clipboard-check-fill"> </i><span>Leave</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-remix.html">
-              <i class="bi bi-circle"></i><span>Remix Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bank"></i><span>Payroll</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-remix.html">
-              <i class="bi bi-circle"></i><span>Remix Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-person"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-remix.html">
-              <i class="bi bi-circle"></i><span>Remix Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav -->
+            <li>
+              <a href="{{ url('/profile')}}"><i class="la la-home"></i> <span>Departments</span></a>
+            </li>
+            <li>
+              <a href="{{ url('/attendance_admin')}}"><i class="la la-edit"></i> <span>Attendance</span></a>
+            </li>
+            <li>
+              <a href="leads.html"><i class="la la-money"></i> <span>Payroll</span></a>
+            </li>
+            <li>
+              <a href="tickets.html"><i class="la la-bell"></i> <span>Leave</span></a>
+            </li>
+            <li>
+              <a href="tickets.html"><i class="la la-pie-chart"></i> <span>Reports</span></a>
+            </li>
+            <li>
+              <a href="tickets.html"><i class="la la-cog"></i> <span>Performance</span></a>
+            </li>
+            <li>
+              <a href="tickets.html"><i class="la la-user-plus"></i> <span>Users</span></a>
+            </li>
+            <li>
+              <a href="tickets.html"><i class="la la-cog"></i> <span>Settings</span></a>
+            </li>
 
 
-    </ul>
-
-  </aside><!-- End Sidebar-->
-
-  <div class="main">
-  @yield('contents')
+        </div>
+      </div>
+    </div>
   </div>
+  @yield('contents')
+  
 
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>ARDHO</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-    </div>
-  </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="{{ url('assets_admin/vendor/apexcharts/apexcharts.min.js') }}"></script>
-  <script src="{{ url('assets_admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ url('assets_admin/vendor/chart.js') }}/chart.umd.js') }}"></script>
-  <script src="{{ url('assets_admin/vendor/echarts/echarts.min.js') }}"></script>
-  <script src="{{ url('assets_admin/vendor/quill/quill.js') }}"></script>
-  <script src="{{ url('assets_admin/vendor/simple-datatables/simple-datatables.js') }}"></script>
-  <script src="{{ url('assets_admin/vendor/tinymce/tinymce.min.js') }}"></script>
-  <script src="{{ url('assets_admin/vendor/php-email-form/validate.js') }}"></script>
+        <script src="{{ url('assets_admin/js/jquery-3.5.1.min.js')}}"></script>
 
-  <!-- Template Main JS File -->
-  <script src="{{ url('assets_admin/js/main.js') }}"></script>
+        <script src="{{ url('assets_admin/js/popper.min.js')}}"></script>
+        <script src="{{ url('assets_admin/js/bootstrap.min.js')}}"></script>
 
+        <script src="{{ url('assets_admin/js/jquery.slimscroll.min.js')}}"></script>
+
+        <script src="{{ url('assets_admin/js/select2.min.js')}}"></script>
+
+        <script src="{{ url('assets_admin/js/moment.min.js')}}"></script>
+        <script src="{{ url('assets_admin/js/bootstrap-datetimepicker.min.js')}}"></script>
+
+        <script src="{{ url('assets_admin/js/app.js')}}"></script>
 </body>
 
 </html>

@@ -1,27 +1,25 @@
 @extends('admin.dashborad')
 @section('contents')
+<div class="page-wrapper">
+<div class="content container-fluid">
 
-<main id="main" class="main">
+<div class="page-header">
+<div class="row">
+<div class="col">
+<h3 class="page-title">Employees</h3>
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="{{ url('/admin')}}">Dashboard</a></li>
+<li class="breadcrumb-item active">Employees</li>
+</ul>
+</div>
+</div>
+</div>
 
-  <div class="pagetitle">
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ url('/admin')}}">Home</a></li>
-        <li class="breadcrumb-item active">Employees</li>
-      </ol>
-    </nav>
-  </div><!-- End Page Title -->
-  <section class="section">
-    <div class="row">
-      <div class="col-lg-12">
+<div class="row">
+<div class="col-sm-12">
 
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Employees:</h5>
-
-            <!-- Table with stripped rows -->
-            <div class="table-responsive">
-              <table class="table datatable">
+<div class="table-responsive">
+<table class="table datatable table-striped table">
                 <thead>
                   <tr>
                     <th>
@@ -42,22 +40,18 @@
                     <td>{{$employee->email}}</td>
                     <td>{{$employee->department_id}}</td>
                     <td>{{$employee->status}}</td>
-                    <td>  <a href="{{ url('employee_details', ['id'=>$employee->id]) }}"  class="btn btn-outline-success btn-sm">Details</a>  </td>
+                    <td>  <a href="{{ url('employee_details', ['id'=>$employee->id]) }}"  class="btn btn-outline-success btn-sm"><i class="material-icons"></i></a>  </td>
   
                   </tr>
+                  
                   @endforeach
   
                 </tbody>
               </table>
-            </div>
-            <!-- End Table with stripped rows -->
+</div>
 
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-</main><!-- End #main -->
+</div>
+</div>
+</div>
+</div>
 @endsection

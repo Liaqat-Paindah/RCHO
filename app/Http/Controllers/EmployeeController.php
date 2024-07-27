@@ -4,25 +4,84 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
+
+
 
 
 class EmployeeController extends Controller
 {
+
+
+    public function save()
+    {
+
+        return view('admin.employee_new');
+    
+    }   
+    
+    public function store(Request $request)
+
+    {
+        
+                   $empath = $request->file('image')->store('public\assets\img\employees');
+
+
+                   // Create Job instance
+                   $employee = new Employee;
+                   $employee->first_name = $request->input('first_name');
+                   $employee->last_name = $request->input('last_name');
+                   $employee->email = $request->input('email');
+                   $employee->gender = $request->input('gender');
+                   $employee->date_of_birth = $request->input('dob');
+                   $employee->nationality = $request->input('nationality');
+                   $employee->address = $request->input('address');
+                   $employee->phone_number = $request->input('phone_number');
+                   $employee->emergency_contact_name = $request->input('emergency_contact_name');
+                   $employee->emergency_contact_number = $request->input('emergency_contact_number');
+                   $employee->job_title = $request->input('position');
+                   $employee->department_id = $request->input('department_id');
+                   $employee->joining_date = $request->input('joining_date');
+                   $employee->image = $empath;
+                   $employee->status = $request->input('status');
+
+                 $employee->save(); // Save the job first to get its ID
+                 
+                  return back()->with('status', 'Employee Has been inserted successfully in database');
+           
+            }
+        
+
+    public function new()
+    {
+        return view('admin.employee_new');
+    }
+
     public function index()
     {
-        $employees=Employee::get();
+
+
+          $employees=Employee::get();
         return view('admin.employee', compact('employees'));
+
     }
 
     public function show_details($id)
+    
     {
-        return view('admin.employee_details');
+      
+        return view('admin.employee_details');           
 
     }
     public function details($id)
     {
-        $employee = Employee::find($id);
+
+            $employee = Employee::find($id);
         return view('admin.employee_details', compact('employee'));
+     
     }
 
     public function show_update()
@@ -62,12 +121,15 @@ class EmployeeController extends Controller
 
     public function show_delete()
     {
+        
         return view('admin.employee_delete');
     }
     public function delete($id)
     {
-        $employee = Employee::find($id);
-        $employee->delete(); 
+
+            $employee = Employee::find($id);
+            $employee->delete(); 
         return view('admin.employee_delete');
     }
+
 }
