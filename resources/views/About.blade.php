@@ -208,6 +208,8 @@
                     <div class="service-item d-flex position-relative h-100">
                         <i class="bi bi-file-bar-graph icon flex-shrink-0"></i>
                         <div>
+
+
                             <h4 class="title"><a href="#" class="stretched-link">Mission Statement</a></h4>
                             <p class="description">
                                 RCHO is to contribute to the education of children
