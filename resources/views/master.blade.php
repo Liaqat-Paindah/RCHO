@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>ARDHO</title>
+  <title>RCHO</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -39,59 +39,64 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex justify-content-between">
+  <header id="header" class="header sticky-top">
 
-      <div class="logo">
-        <h1><a href="{{ url('/')}}"> <img src="{{ url('assets/img/logo.png')}}" alt=""> </a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="{{ url('assets/img/logo.png')}}" alt="" class="img-fluid"></a>-->
+  <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">Info@rcho.af</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+93(0) 700-088-276</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <img src="{{url('assets\img\logo.png')}}" alt="">
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="{{url('')}}" class="active">Home</a></li>
+            <li><a href="{{url('/about')}}">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Project</a></li>
+            <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="#">Dropdown 1</a></li>
+                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Deep Dropdown 1</a></li>
+                    <li><a href="#">Deep Dropdown 2</a></li>
+                    <li><a href="#">Deep Dropdown 3</a></li>
+                    <li><a href="#">Deep Dropdown 4</a></li>
+                    <li><a href="#">Deep Dropdown 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Dropdown 2</a></li>
+                <li><a href="#">Dropdown 3</a></li>
+                <li><a href="#">Dropdown 4</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
       </div>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="{{url('/')}}">Home</a></li>
-          <li class="dropdown"><a href="{{ url('/') }}"><span>About</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="{{ url('/about') }}">Who we are</a></li>
-              <li><a href="{{ url('/staff') }}">Staff</a></li>
-              <li><a href="{{ url('/approach') }}">Approach</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="{{ url('/') }}"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="/services/humanitarian">Humanitarian</a></li>
-              <li><a href="/services/Development">Development</a></li>
-              <li><a href="/services/Research">Research</a></li>
-              <li><a href="/services/Education">Education</a></li>
-              <li><a href="/services/Health">Health</a></li>
-              <li><a href="/services/Nutrition">Nutrition</a></li>
-              <li><a href="/services/Agriculture">Agriculture</a></li>
-
-            </ul>
-          </li>
-          <li class="dropdown"><a href="{{ url('/project') }}"><span>Projects</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="{{ url('/project_ct') }}">Completed</a></li>
-              <li><a href="{{ url('/project_on') }}">On-going</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="{{ url('/') }}"><span>Pulications</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="{{ url('/reports') }}">Reports</a></li>
-              <li><a href="{{ url('/') }}">Documents</a></li>
-              <li><a href="{{url('/stories')}}">Success Stories</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="{{ url('/career')}}">Career</a></li>
-
-          <li><a class="nav-link scrollto" href="{{ url('/donations/create')}}">Donate</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
     </div>
-  </header><!-- End Header -->
+
+  </header>
   @yield('content')
 
   <!-- ======= Footer ======= -->
@@ -102,11 +107,14 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>ARDHO</h3>
+            <h3>RCHO</h3>
             <p>
-              <strong>Address:</strong>   House #64, Street #2,  <br>In Front of Lycée Ghazi, Karta-e Char, <br> Kabul, Afghanistan <br> <br>
-              <strong>Phone:</strong> +93 (0) 202-503-850<br>
-              <strong>Email:</strong> info@ardho.org<br>
+              Registered with Ministry of Economy MoEC of Afghanistan Islamic Emirate According to the decision No 5485
+                date 23th April, 2022
+                <br><br>
+
+              <strong>Phone:</strong> +93(0) 700-088-276<br>
+              <strong>Email:</strong> info@RCHO.af<br>
             </p>
           </div>
 
@@ -128,7 +136,6 @@
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/Agriculture') }}">Agriculture  </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/Nutrition') }}">Nutrition</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/Health') }}">Health</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/Education') }}">Education</a></li>
             </ul>
           </div>
 
@@ -136,11 +143,11 @@
             <h4>Our Social Networks</h4>
             <p>Stay connected with us! Follow our official social media accounts for the latest updates, news, and insights:</p>
             <div class="social-links mt-3">
-              <a href="https://x.com/ARDHO177016" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://x.com/RCHO177016" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="https://www.facebook.com/profile.php?id=61559738920399" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="https://www.instagram.com/ardho_afghanistan/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.instagram.com/RCHO_afghanistan/" class="instagram"><i class="bx bxl-instagram"></i></a>
               <a href="{{ url('/') }}" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="https://www.linkedin.com/in/ardho-afghanistan-96239030b/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.linkedin.com/in/RCHO-afghanistan-96239030b/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
           </div>
 
@@ -150,14 +157,13 @@
 
     <div class="container py-2">
       <div class="copyright">
-        &copy; Copyright <strong><span>ARDHO</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>RCHO</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
-        Designed by <a href="{{ url('/') }}">ARDHO</a>
       </div>
     </div>
   </footer><!-- End Footer -->

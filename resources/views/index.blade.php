@@ -15,7 +15,7 @@
             <div class="carousel-container">
               <div class="container">
                 <h2 class="animate__animated animate__fadeInDown">Welcome to </h2>
-                <p class="animate__animated animate__fadeInUp">Afghanistan Research, Development & Health Organization
+                <p class="animate__animated animate__fadeInUp">Reaching Community & Healthcare Organization
                 </p>
                 <a href="{{ url('/about') }}" class="btn-get-started scrollto animate__animated animate__fadeInUp">More Details</a>
               </div>
@@ -25,8 +25,8 @@
           <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/2.jpg)">
             <div class="carousel-container">
               <div class="container">
-                <h2 class="animate__animated animate__fadeInDown"> We empower women and girls </h2>
-                <p class="animate__animated animate__fadeInUp">because achieving equal rights and opportunities for all is essential to alleviate poverty effectively.</p>
+                <h2 class="animate__animated animate__fadeInDown">We aims to improve </h2>
+                <p class="animate__animated animate__fadeInUp">RCHO aims to improve the living standards of vulnerable communities in Afghanistan by focusing on community mobilization, capacity building, advocacy, and strengthening grassroots institutions.</p>
                 <a href="{{ url('/about') }}" class="btn-get-started scrollto animate__animated animate__fadeInUp">More Details</a>
               </div>
             </div>
@@ -35,8 +35,8 @@
           <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/3.jpg)">
             <div class="carousel-container">
               <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Achieving true poverty</h2>
-                <p class="animate__animated animate__fadeInUp">alleviation requires equal rights and opportunities for all individuals.</p>
+                <h2 class="animate__animated animate__fadeInDown">RCHO promotes</h2>
+                <p class="animate__animated animate__fadeInUp"> youth leadership, human rights, and better child health, while improving healthcare access for underserved communities.</p>
                 <a href="{{ url('/about') }}" class="btn-get-started scrollto animate__animated animate__fadeInUp">More Details</a>
               </div>
             </div>
@@ -56,157 +56,68 @@
     </div>
 
 
-    
+
+
   </section><!-- End Hero Section -->
-  
-  <div id="team" class="our-team-area area-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="section-headline text-center">
-            <h2>Reccent <span class="highlight">Publications</span></h2>
-          </div>
+
+
+<section id="hero" class="hero section">
+    <div class="featured container" style="margin-top: 550px ;">
+
+        <div class="row gy-2">
+
+          <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="featured-item position-relative">
+              <div class="icon"><i class="bi bi-eye icon"></i></div>
+              <h4><a href="" class="stretched-link">Vision</a></h4>
+              <p id="desc">An enabling environment for the
+                realization, respect, and protection of
+                fundamental human rights among youth
+                and develop their leadership qualities to
+                make them active contributors within the
+                society plus make greater understanding
+                of health and illness in children and
+                substantial improvements in health quality
+                for those who have no access to health
+                care facilities.</p>
+            </div>
+          </div><!-- End Featured Item -->
+
+          <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="featured-item position-relative">
+              <div class="icon"> <i class="bi bi-clipboard-data icon"></i> </div>
+              <h4><a href="" class="stretched-link">Goal</a></h4>
+              <p id="desc">The goal of RCHO is to contribute
+                in improving the living standard
+                of the vulnerable communities of
+                Afghanistan through community
+                mobilization, capacity building,
+                advocacy & strengthening of
+                institutions at the grass root level.</p>
+            </div>
+          </div><!-- End Featured Item -->
+
+          <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="featured-item position-relative">
+              <div class="icon"><i class="bi bi-gear-wide-connected icon"></i></div>
+              <h4><a href="" class="stretched-link">Strategy</a></h4>
+              <p id="desc" >A sustainable strategy is devised to
+                achieve the maximum, a need based and
+                right based approach initiated ascertains
+                the problem with fully community
+                involvement and mobilizing all indigenous
+                and local resources. The program goal are
+                materialized with a helping hand from
+                member’s donor agencies, Philanthropists.</p>
+            </div>
+          </div><!-- End Featured Item -->
+
         </div>
+
       </div>
-      <div class="row">
-        <div class="col-md-3 col-sm-3 col-xs-12">
-          <div class="single-team-member">
-            <div class="team-img">
-              <a href="#">
-                <img src="assets/img/team/1.png" alt="">
-              </a>
-              <div class="team-social-icon text-center">
-                <ul>
-                  <li>
-                    <a href="#">
-                      <i class="bi bi-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="bi bi-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="bi bi-instagram"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="team-content text-center">
-              <h4>ARDHO Announcement</h4>
-              <p>Kabul Office</p>
-            </div>
-          </div>
-        </div>
-        <!-- End column -->
-        <div class="col-md-3 col-sm-3 col-xs-12">
-          <div class="single-team-member">
-            <div class="team-img">
-              <a href="#">
-                <img src="assets/img/team/2.jpg" alt="">
-              </a>
-              <div class="team-social-icon text-center">
-                <ul>
-                  <li>
-                    <a href="#">
-                      <i class="bi bi-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="bi bi-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="bi bi-linkedin"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="team-content text-center">
-              <h4>Doctor Nasratullah Safari </h4>
-              <p>General Director - Message</p>
-            </div>
-          </div>
-        </div>
-        <!-- End column -->
+</section>
 
 
-       
-        @foreach($reports as $report)
-        <div class="col-md-3 col-sm-3 col-xs-12">
-          <div class="single-team-member">
-            <div class="team-img">
-              <a href="#">
-                <img src="{{$report->profile}}" alt="">
-              </a>
-              <div class="team-social-icon text-center">
-                <ul>
-                  <li>
-                    <a href="#">
-                      <i class="bi bi-share"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="bi bi-info"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{{$report->pdf}}">
-                      <i class="bi bi-download"> </i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="team-content text-center">
-              <h4>{{$report->report_title}} - {{$report->submitted}}</h4>
-              <p>Education Project</p>
-            </div>
-          </div>
-        </div>
-        @endforeach
-
-
-
-        <!-- End column -->
-        <div class="col-md-3 col-sm-3 col-xs-12">
-          <div class="single-team-member">
-            <div class="team-img">
-              <a href="#">
-                <img src="assets/img/team/4.jpg" alt="">
-              </a>
-              <div class="team-social-icon text-center">
-                <ul>
-                  <li>
-                    <a href="#">
-                      <i class="bi bi-info"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="bi bi-share"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="team-content text-center">
-              <h4>Transforming Healthcare </h4>
-              <p>Research and Innovation</p>
-            </div>
-          </div>
-        </div>
-        <!-- End column -->
-      </div>
-    </div>
-  </div><!-- End Team Section -->
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
       <div class="container" data-aos="fade-up">
@@ -257,11 +168,28 @@
           <div class="section-headline text-center">
             <div class="section-title">
               <h2>Our <span class="highlight"> Partners</span> </h2>
-              <p>Afghanistan Research Development and Health organization (ARDHO) is a non-governmental, non-profit and
-                humanitarian organization registered with the Ministry of Economy of Afghanistan, established in 2019 by
-                a group of young, energetic, motivated, and highly committed youth to address the most urgent and
-                pressing needs of the people of Afghanistan to improve and develop the socio-economic status of the
-                underprivileged and disadvantaged rural communities in Afghanistan. .</p>
+              <p>Reaching Community & Healthcare
+                    Organization (RCHO) is an independent
+                    registered non-government and
+                    nonprofit civil society organization
+                    based at Kabul Province. RCHO prime
+                    motto is community Development and
+                    health services delivery to the deprived
+                    and marginalized people of the society
+                    across the country.
+                    In 2022 a group of educated, dynamic
+                    and like-minded youth working in the
+                    development sector, got together to
+                    establish an organization, for addressing
+                    the most urgent and pressing needs of
+                    the people of Afghanistan. True to this
+                    spirit, the organization was named
+                    Reaching Community & Healthcare
+                    Organization (RCHO).
+                    Considering their association with the
+                    development sector the group was
+                    cognizant of the plethora of problems
+                    plaguing the province.</p>
             </div>
           </div>
         </div>
@@ -287,7 +215,7 @@
       </div>
 
     </div>
-    
+
     <!-- ======= Rviews Section ======= -->
     <div class="reviews-area">
       <div class="row g-0">
@@ -296,8 +224,11 @@
         </div>
         <div class="col-lg-6 work-right-text d-flex align-items-center">
           <div class="px-5 py-5 py-lg-0">
-            <h2>Five Years of Health Impact</h2>
-            <p class="text-stories">We are pleased to share this booklet that summarizes 10 of the best stories we’ve collected from the field. These narratives are a legacy to Madagascar’s health system and for future public health interventions in the country. They show how UNICEF transforms lives by working hand in hand with the Ministry of Public Health to strengthen community resilience and to enhance the quality of primary health care services in rural communities.</p>
+            <h2>Overall Objective</h2>
+            <p class="text-stories">
+                The overall development objective of (RCHO) is enhanced ability in the target
+                communities to tackle their own economic, social and environmental problems for
+                sustainable community development..</p>
             <a href="#contact" class="ready-btn scrollto">Read Stories</a>
           </div>
         </div>
@@ -307,29 +238,6 @@
         <!-- Call To Action Section -->
         <section id="call-to-action" class="call-to-action section">
 
-<div class="container" data-aos="zoom-out">
-
-  <div class="row g-5">
-
-    <div class="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first">
-      <h3>Dr. Nasratullah "Safari"</h3>
-      <p>             Afghanistan Research Development and Health organization (ARDHO) is a non-governmental, non-profit and
-        humanitarian organization registered with the Ministry of Economy of Afghanistan, established in 2019 by
-        a group of young, energetic, motivated, and highly committed youth to address the most urgent and
-        pressing needs of the people of Afghanistan to improve and develop the socio-economic status of the
-        underprivileged and disadvantaged rural communities in Afghanistan.</p>
-      <a class="cta-btn align-self-start" href="#">More Details</a>
-    </div>
-
-    <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
-      <div class="img">
-        <img src="assets/img/cta.jpg" alt="" class="img-fluid">
-      </div>
-    </div>
-
-  </div>
-
-</div>
 
 </section><!-- /Call To Action Section -->
 

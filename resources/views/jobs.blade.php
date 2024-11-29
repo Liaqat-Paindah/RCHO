@@ -146,25 +146,7 @@
             </div>
 
             <div class="form-step" id="step5">
-              <h4>Step 4: Reference</h4>
-              <div class="form-group">
-                <label for="experience">Do you have reference?</label>
-                <select onchange="ReferenceButton()" name="experience" class="form-control" id="YesNo">
-                  <Option value="disabled">...</Option>
-                  <Option value="Yes">Yes</Option>
-                  <option value="No">No</option>
-                </select>
-              </div>
-              <div id="workExperienceContainer2">
-                <!-- This container will hold dynamically added work experience fields -->
-              </div>
-              <button id="addButton1" type="button" class="btn btn-success mt-2" onclick="addReference()">Add Reference</button>
-              <button type="button" class="btn btn-primary mt-2 mr-2" onclick="prevStep()">Previous</button>
-              <button type="button" class="btn btn-primary mt-2" onclick="nextStep()">Next</button>
-            </div>
-
-            <div class="form-step" id="step6">
-              <h4>Step 6: Attachments</h4>
+              <h4>Step 5: Attachments</h4>
               <div class="form-group">
                 <label for="resume">Resume:</label>
                 <input type="file" name="cv" class="form-control-file" id="resume" required>
@@ -180,6 +162,10 @@
                 <input type="file" name="diploma" class="form-control-file" id="diploma" required>
               </div>
               <div class="form-group">
+                <label for="coverLetter">Transcript:</label>
+                <input type="file" name="transcript" class="form-control-file" id="transcript" required>
+              </div>
+              <div class="form-group">
                 <label for="coverLetter">NID || Tazkira:</label>
                 <input type="file" name="tazkira" class="form-control-file" id="tazkira" required>
               </div>
@@ -187,7 +173,6 @@
               <button type="button" class="btn btn-primary mt-2 mr-2" onclick="prevStep()">Previous</button>
               <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </div>
-
           </form>
         </div>
         <div class="col-sm-3"></div>
@@ -213,22 +198,6 @@ function toggleButton() {
     addButton.style.display = 'block';
   } else {
     addButton.style.display = 'none';
-  }
-}
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  var addButton1 = document.getElementById('addButton1');
-  addButton1.style.display = 'none'; // Ensure button is hidden initially
-});
-function ReferenceButton() {
-  var YesNo = document.getElementById('YesNo');
-  var addButton1= document.getElementById('addButton1');
-
-  if (YesNo.value == 'Yes') {
-    addButton1.style.display = 'block';
-  } else {
-    addButton1.style.display = 'none';
   }
 }
 
@@ -277,82 +246,6 @@ function ReferenceButton() {
     }
 
 
-    var ReferenceCount = 0;
-
-function addReference() {
-  ReferenceCount++;
-
-  var container = document.getElementById('workExperienceContainer2');
-
-  var ReferenceHTML = `
-<div class="refence-item mb-3">
-  <div class="form-group">
-    <label for="job-title-${ReferenceCount}">Reference Name</label>
-    <input type="text" class="form-control" id="job-title-${ReferenceCount}" name="reference_name[]" placeholder="Enter Reference Name">
-  </div>
-  <div class="form-group">
-    <label for="reference-type-${ReferenceCount}">Reference Type</label>
-    <input type="text" class="form-control" id="reference-type-${ReferenceCount}" name="reference_type[]" placeholder="Enter Reference Type">
-  </div>
-  <div class="form-group">
-    <label for="relationship-${ReferenceCount}">Relationship</label>
-    <input type="text" class="form-control" id="relationship-${ReferenceCount}" name="relationship[]" placeholder="Enter Relationship">
-  </div>
-
-  <div class="form-group">
-    <label for="organization-${ReferenceCount}">Organization</label>
-    <input type="text" class="form-control" id="organization-${ReferenceCount}" name="organization[]" placeholder="Enter Organization">
-  </div>
-
-
-<div class="form-group">
-<label for="email-${ReferenceCount}">Email</label>
-<input type="email" class="form-control" id="email-${ReferenceCount}" name="reference_email[]" placeholder="Enter email address">
-</div>
-
-<div class="form-group">
-<label for="phone-${ReferenceCount}">Phone</label>
-<input type="number" class="form-control" id="phone-${ReferenceCount}" name="reference_phone[]"  placeholder="Enter phone number">
-</div>
-
-<div class="form-group">
-<label for="position-${ReferenceCount}">Position</label>
-<input type="text" class="form-control" id="position-${ReferenceCount}" name="position[]" placeholder="Enter Position">
-</div>
-
-<div class="form-group">
-<label for="association-start-${ReferenceCount}">Association Start</label>
-<input type="date" class="form-control" id="association-start-${ReferenceCount}" name="association_start[]">
-</div>
-
-    <div class="form-group">
-<label for="association-end-${ReferenceCount}">Association End</label>
-<input type="date" class="form-control" id="association-end-${ReferenceCount}" name="association_end[]">
-</div>
-
-<div class="form-group">
-<label for="perspective_comments-${ReferenceCount}">Perspective Comments</label>
-<textarea class="form-control" id="perspective-comments-${workExperienceCount}" name="perspective[]" rows="3" placeholder="Enter perspective comments"></textarea>
-</div>
-
-
-  <br>
-  <button type="button" class="btn btn-danger btn-sm" onclick="removeReference(this)">Remove</button>
-</div>
-`;
-
-  var wrapper1 = document.createElement('div');
-  wrapper1.innerHTML = ReferenceHTML;
-  container.appendChild(wrapper1);
-}
-
-function removeReference(button) {
-  var itemToRemove = button.closest('.refence-item');
-  itemToRemove.remove();
-}
-
-
-
     var currentStep = 1;
 
     function nextStep() {
@@ -377,7 +270,7 @@ function removeReference(button) {
       if (prevDiv) {
         prevDiv.classList.add('active');
       } else {
-        currentStep = 7; // Reset to the last step if trying to go back from the first step
+        currentStep = 6; // Reset to the last step if trying to go back from the first step
       }
     }
 

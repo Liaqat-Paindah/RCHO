@@ -14,8 +14,4 @@ class job extends Model
     {
         return $this->hasMany(WorkExperience::class);
     }
-    public function references()
-    {
-        return $this->hasMany(CandidateReference::class);
-    }
 }

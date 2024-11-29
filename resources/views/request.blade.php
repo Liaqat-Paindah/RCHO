@@ -10,8 +10,8 @@
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6 shadow p-4 m-2">
                     <h6 class="donate-tag">Request Profile :</h6>
-                    <form action="{{ url('/request') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
+                    <form action="{{ route('donations.store') }}" method="post" class=" p-4 aos-init aos-animate"
+                    data-aos="fade-up" data-aos-delay="200">
                     <div class="row gy-4">
     
                         <div class="col-md-12">
@@ -27,7 +27,7 @@
                         <div class="col-md-12">
                             <label for="">Reason:</label>
 
-                            <textarea name="reason" id="" class="form-control" placeholder="Please writ the here."></textarea>
+                            <textarea name="" id="" class="form-control" placeholder="Please writ the here."></textarea>
                         </div>
 
                         <div class="col-md-12">
