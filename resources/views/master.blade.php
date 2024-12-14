@@ -44,7 +44,7 @@
   <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">Info@rcho.af</a></i>
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">info@rcho.af</a></i>
           <i class="bi bi-phone d-flex align-items-center ms-4"><span>+93(0) 700-088-276</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
@@ -68,26 +68,15 @@
           <ul>
             <li><a href="{{url('')}}" class="active">Home</a></li>
             <li><a href="{{url('/about')}}">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Project</a></li>
-            <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li><a href="{{ url('/services') }}">Services</a></li>
+            <li><a href="{{url('do')}}">What We Do</a></li>
+            <li class="dropdown"><a href="{{url('/project')}}"><span>Project</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
+                <li><a href="{{url('/project_on')}}">Prograss</a></li>
+                <li><a href="{{url('/project_ct')}}">Completed</a></li>
               </ul>
             </li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="{{url('/contact')}}">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -109,12 +98,12 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>RCHO</h3>
             <p>
-              Registered with Ministry of Economy MoEC of Afghanistan Islamic Emirate According to the decision No 5485
-                date 23th April, 2022
+                Registered with Ministry of Economy (MoE) - Afghanistan. Registration# 5485 <br>
+                Registered with Ministry of Public Health (MoPH) - Afghanistan. Registration# 794
                 <br><br>
 
               <strong>Phone:</strong> +93(0) 700-088-276<br>
-              <strong>Email:</strong> info@RCHO.af<br>
+              <strong>Email:</strong> info@rcho.af<br>
             </p>
           </div>
 

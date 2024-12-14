@@ -34,7 +34,10 @@ Route::get('/reports', [ReportController::class, 'show']);
 Route::get('/request', [RequestController::class, 'index']);
 
 Route::get('/staff', [StaffController::class, 'index']);
-Route::get('/services/{category}', [ServiceController::class, 'index']);
+Route::get('/services', [ServiceController::class, 'index']);
+Route::get('/do', [ServiceController::class, 'do']);
+Route::get('/contact',[ServiceController::class, 'contact']);
+
 Route::get('services/{category}', [ServiceController::class, 'show']);
 Route::get('/donations/create', [DonationController::class, 'create'])->name('donations.create');
 Route::post('/donations/store', [DonationController::class, 'store'])->name('donations.store');

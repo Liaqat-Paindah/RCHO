@@ -206,10 +206,16 @@
                 src="assets/img/clients/client-3.jpg" class="img-fluid" alt=""></a></div>
           <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/clients/client-4.jpg"><img
                 src="assets/img/clients/client-4.jpg" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/clients/client-5.jpg"><img
-                src="assets/img/clients/client-5.jpg" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/clients/client-6.jpg"><img
-                src="assets/img/clients/client-6.jpg" class="img-fluid" alt=""></a></div>
+                <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/clients/client-1.jpg"><img
+                src="assets/img/clients/client-1.jpg" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/clients/client-2.jpg"><img
+                src="assets/img/clients/client-2.jpg" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/clients/client-3.jpg"><img
+                src="assets/img/clients/client-3.jpg" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/clients/client-4.jpg"><img
+                src="assets/img/clients/client-4.jpg" class="img-fluid" alt=""></a></div>
+
+
         </div>
         <div class="swiper-pagination"></div>
       </div>

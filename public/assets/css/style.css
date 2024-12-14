@@ -231,7 +231,7 @@ body {
 }
 
 .back-to-top:hover {
-  background: #60ccdc;
+  background: #017eb3;
   color: #fff;
 }
 
@@ -374,7 +374,7 @@ div#preloader {
   }
 
   .header .topbar {
-    background-color: rgb(223, 231, 255);
+    background-color: #f7fbfe;
     height: 40px;
     padding: 0;
     font-size: 14px;
@@ -597,13 +597,13 @@ div#preloader {
     .navmenu li:hover>a,
     .navmenu .active,
     .navmenu .active:focus {
-      color: var(--nav-hover-color);
+      color: #005fa8;
     }
 
     .navmenu .dropdown ul {
       margin: 0;
       padding: 10px 0;
-      background: var(--nav-dropdown-background-color);
+      background: white;
       display: block;
       position: absolute;
       visibility: hidden;
@@ -619,6 +619,10 @@ div#preloader {
     .navmenu .dropdown ul li {
       min-width: 200px;
     }
+    .navmenu .dropdown ul li:hover {
+        min-width: 200px;
+        color: #005fa8;
+      }
 
     .navmenu .dropdown ul a {
       padding: 10px 20px;
@@ -1416,86 +1420,49 @@ div#preloader {
     }
   }
 
+
 /*--------------------------------------------------------------
-# Services Section
+# Services
 --------------------------------------------------------------*/
+.services .icon-box {
+    padding: 30px;
+    border-radius: 6px;
+    background: #fff;
+    transition: ease-in-out 0.3s;
+  }
 
+  .services .icon-box i {
+    float: left;
+    color: #00a0e4;
+    font-size: 40px;
+    line-height: 0;
+  }
 
+  .services .icon-box h4 {
+    margin-left: 70px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
 
-.services .img {
-  border-radius: 8px;
-  overflow: hidden;
-}
-.services .section-title
-{
-  margin-top: 80px;
-}
+  .services .icon-box h4 a {
+    color: #00050e;
+    transition: 0.3s;
+  }
 
+  .services .icon-box p {
+    margin-left: 70px;
+    line-height: 24px;
+    font-size: 14px;
+  }
 
-.services .img img {
-  transition: 0.6s;
-}
+  .services .icon-box:hover {
+    box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.08);
+  }
 
-.services .details {
-  padding: 50px 30px;
-  margin: -100px 30px 0 30px;
-  transition: all ease-in-out 0.3s;
-  position: relative;
-  background: color-mix(in srgb, var(--contrast-color), transparent 5%);
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0px 0 25px color-mix(in srgb, var(--default-color), transparent 92%);
-}
-
-.services .details .icon {
-  margin: 0;
-  width: 72px;
-  height: 72px;
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  border: 6px solid var(--contrast-color);
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  font-size: 28px;
-  transition: ease-in-out 0.3s;
-  position: absolute;
-  top: -36px;
-  left: calc(50% - 36px);
-}
-
-.services .details h3 {
-  font-weight: 700;
-  margin: 10px 0 15px 0;
-  font-size: 16px;
-  transition: ease-in-out 0.3s;
-}
-
-.services .details p {
-  color: color-mix(in srgb, var(--default-color), transparent 10%);
-  font-size: 12px;
-  margin-bottom: 0;
-  text-align: justify;
-}
-
-.services .service-item:hover .details h3 {
-  color: var(--accent-color);
-}
-
-.services .service-item:hover .details .icon {
-  background: var(--contrast-color);
-  border: 2px solid var(--accent-color);
-}
-
-.services .service-item:hover .details .icon i {
-  color: var(--accent-color);
-}
-
-.services .service-item:hover .img img {
-  transform: scale(1.2);
-}
+  .services .icon-box:hover h4 a {
+    color: #00a0e4;
+  }
 
 /*--------------------------------------------------------------
 # More Services
@@ -1561,6 +1528,61 @@ div#preloader {
 .more-services .card:hover .card-text {
   color: #fff;
 }
+
+/*--------------------------------------------------------------
+# What We Do
+--------------------------------------------------------------*/
+.what-we-do .icon-box {
+    text-align: center;
+    padding: 30px 20px;
+    transition: all ease-in-out 0.3s;
+    background: #f7fbfe;
+  }
+
+  .what-we-do .icon-box .icon {
+    margin: 0 auto;
+    width: 64px;
+    height: 64px;
+    background: #eaf4fb;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: ease-in-out 0.3s;
+  }
+
+  .what-we-do .icon-box .icon i {
+    color: #3498db;
+    font-size: 28px;
+  }
+
+  .what-we-do .icon-box h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+
+  .what-we-do .icon-box h4 a {
+    color: #384046;
+    transition: ease-in-out 0.3s;
+  }
+
+  .what-we-do .icon-box p {
+    font-size: 14px;
+    margin-bottom: 0;
+    text-align: justify;
+  }
+
+  .what-we-do .icon-box:hover {
+    border-color: #fff;
+    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .what-we-do .icon-box:hover h4 a,
+  .what-we-do .icon-box:hover .icon i {
+    color: #3498db;
+  }
 
 
 /*--------------------------------------------------------------
@@ -1671,6 +1693,58 @@ div#preloader {
 /*--------------------------------------------------------------
 # Service Details Section
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+    padding: 60px 0;
+  }
+
+  .section-bg {
+    background-color: #f7fbfe;
+  }
+
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  .section-title h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+  }
+
+  .section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #00a0e4;
+    bottom: 0;
+    left: calc(50% - 20px);
+  }
+
+  .section-title p {
+    margin-bottom: 0;
+    text-align: justify;
+  }
+
+
 .service-details .service-box {
   padding: 20px;
   box-shadow: 0px 2px 20px color-mix(in srgb, var(--default-color), transparent 88%);
@@ -2602,134 +2676,151 @@ div#preloader {
   color: #fff;
 }
 
+
+
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.contact-area {
-  height: auto;
-  width: 100%;
-}
-
-.contact-content {
-  padding: 100px;
-  background: #000 none repeat scroll 0 0;
-}
-
-.contact-content-right {
-  padding: 100px;
-}
-
-.single-icon i {
-  font-size: 32px;
-  width: 50px;
-  height: 50px;
-  line-height: 56px;
-  border-radius: 50%;
-  margin-bottom: 30px;
-  color: #00a0e4;
-}
-
-.single-icon p {
-  font-size: 16px;
-  line-height: 30px;
-}
-
-.contact-icon {
-  margin-bottom: 40px;
-}
-
-#google-map {
-  height: 370px;
-  margin-bottom: 20px;
-}
-
-.php-email-form .validate {
-  display: none;
-  color: red;
-  margin: 0;
-  font-weight: 400;
-  font-size: 13px;
-}
-
-.php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #005fa8;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #005fa8;
-  border-top-color: #eee;
-  animation: animate-loading 1s linear infinite;
-}
-
-.php-email-form input,
-.php-email-form textarea {
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-}
-
-.php-email-form input:focus,
-.php-email-form textarea:focus {
-  border-color: #00a0e4;
-}
-
-.php-email-form input {
-  padding: 10px 15px;
-}
-
-.php-email-form textarea {
-  padding: 12px 15px;
-}
-
-.php-email-form button[type=submit] {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  border: 1px solid #ccc;
-  color: #444;
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: 8px;
-  padding: 12px 30px;
-  text-transform: uppercase;
-  transition: all 0.3s ease 0s;
-  border-radius: 30px;
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
+.contact .info-wrap {
+    padding: 30px;
+    background: #fff;
+    border-radius: 4px;
   }
 
-  100% {
-    transform: rotate(360deg);
+  .contact .info i {
+    font-size: 20px;
+    color: #00a0e4;
+    float: left;
+    border: 1px solid #00a0e4;
+    width: 44px;
+    height: 44px;
+    background: #eaf4fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
   }
-}
+
+  .contact .info h4 {
+    padding: 0 0 0 60px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #005fa8;
+  }
+
+  .contact .info p {
+    padding: 0 0 0 60px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #00050e;
+  }
+
+  .contact .info:hover i {
+    background: #3498db;
+    color: #fff;
+  }
+
+  .contact .php-email-form {
+    width: 100%;
+    padding: 30px;
+    background: #fff;
+    border-radius: 4px;
+  }
+
+  .contact .php-email-form .form-group {
+    padding-bottom: 8px;
+  }
+
+  .contact .php-email-form .validate {
+    display: none;
+    color: red;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    font-size: 13px;
+  }
+
+  .contact .php-email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+  }
+
+  .contact .php-email-form .error-message br+br {
+    margin-top: 25px;
+  }
+
+  .contact .php-email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+
+  .contact .php-email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .contact .php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    animation: animate-loading 1s linear infinite;
+  }
+
+  .contact .php-email-form input,
+  .contact .php-email-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+
+  .contact .php-email-form input {
+    height: 44px;
+  }
+
+  .contact .php-email-form textarea {
+    padding: 10px 12px;
+  }
+
+  .contact .php-email-form button[type=submit] {
+    background: #3498db;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+  }
+
+  .contact .php-email-form button[type=submit]:hover {
+    background: #5faee3;
+  }
+
+  @keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
 
 
 
@@ -2884,13 +2975,12 @@ div#preloader {
   width: 36px;
   height: 36px;
   transition: 0.3s;
-  border: 1px solid #005fa8;
 }
 
 #footer .footer-top .social-links a:hover {
   background: white;
-  color: #005fa8;
-  border: 1px solid #005fa8;
+  color: #00a0e4;
+  border: 1px solid #00a0e4;
   text-decoration: none;
 }
 
