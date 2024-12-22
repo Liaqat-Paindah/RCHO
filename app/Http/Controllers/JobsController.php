@@ -48,11 +48,11 @@ class JobsController extends Controller
         ]);
 
         // Save  files
-        $cvPath = $request->file('cv')->store('public\assets\img\applications');
-        $letterPath = $request->file('letters')->store('public\assets\img\applications');
-        $diplomaPath = $request->file('diploma')->store('public\assets\img\applications');
-        $transcriptPath = $request->file('transcript')->store('public\assets\img\applications');
-        $tazkiraPath = $request->file('tazkira')->store('public\assets\img\applications');
+        $cvPath = $request->file('cv')->store('public/assets/img/applications');
+        $letterPath = $request->file('letters')->store('public/assets/img/applications');
+        $diplomaPath = $request->file('diploma')->store('public/assets/img/applications');
+        $transcriptPath = $request->file('transcript')->store('public/assets/img/applications');
+        $tazkiraPath = $request->file('tazkira')->store('public/assets/img/applications');
 
         // Create Job instance
         $job = new Job;
@@ -95,9 +95,8 @@ class JobsController extends Controller
         }
 
         // Send confirmation email
-        Mail::to($request->input('email'))->send(new ConfirmationMail());
 
-        return back()->with('success', 'Your Application has been successfully Send');
+        return back()->with('success', 'Your Application has been successfully Send!');
     }
 
     public function details($id)

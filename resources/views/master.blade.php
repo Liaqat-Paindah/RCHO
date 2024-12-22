@@ -38,54 +38,54 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header sticky-top">
-
+<header id="header" class="header sticky-top">
   <div class="topbar d-flex align-items-center">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">info@rcho.af</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+93(0) 700-088-276</span></i>
-        </div>
-        <div class="social-links d-none d-md-flex align-items-center">
-          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        </div>
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">info@rcho.af</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+93(0) 700-088-276</span></i>
       </div>
-    </div><!-- End Top Bar -->
-
-    <div class="branding">
-
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
-          <img src="{{url('assets\img\logo.png')}}" alt="">
-        </a>
-
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="{{url('')}}" class="active">Home</a></li>
-            <li><a href="{{url('/about')}}">About</a></li>
-            <li><a href="{{ url('/services') }}">Services</a></li>
-            <li><a href="{{url('do')}}">What We Do</a></li>
-            <li class="dropdown"><a href="{{url('/project')}}"><span>Project</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="{{url('/project_on')}}">Prograss</a></li>
-                <li><a href="{{url('/project_ct')}}">Completed</a></li>
-              </ul>
-            </li>
-            <li><a href="{{url('/contact')}}">Contact</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
+    </div>
+  </div><!-- End Top Bar -->
+
+  <div class="branding">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <img src="{{url('assets/img/logo.png')}}" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{{url('')}}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a></li>
+          <li><a href="{{url('/about')}}" class="{{ Request::is('about') ? 'active' : '' }}">About</a></li>
+          <li><a href="{{ url('/services') }}" class="{{ Request::is('services') ? 'active' : '' }}">Services</a></li>
+          <li><a href="{{url('do')}}" class="{{ Request::is('do') ? 'active' : '' }}">What We Do</a></li>
+          <li class="dropdown">
+            <a href="{{url('/project')}}" class="{{ Request::is('project') ? 'active' : '' }}"><span>Project</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{{url('/project_on')}}" class="{{ Request::is('project_on') ? 'active' : '' }}">Progress</a></li>
+              <li><a href="{{url('/project_ct')}}" class="{{ Request::is('project_ct') ? 'active' : '' }}">Completed</a></li>
+            </ul>
+          </li>
+          <li><a href="{{url('/career')}}" class="{{ Request::is('career') ? 'active' : '' }}">Career</a></li>
+          <li><a href="{{url('/contact')}}" class="{{ Request::is('contact') ? 'active' : '' }}">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
 
     </div>
 
-  </header>
+  </div>
+
+</header>
+
   @yield('content')
 
   <!-- ======= Footer ======= -->

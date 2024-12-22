@@ -316,7 +316,7 @@ div#preloader {
 }
 
 ::selection {
-  background: rgb(201, 239, 211);
+  background: rgb(135, 214, 251);
   text-shadow: none;
 }
 
@@ -2831,7 +2831,7 @@ section {
 #footer {
   background: #fff;
   padding: 0 0 30px 0;
-  color: #02362a;
+  color: #021936;
   font-size: 14px;
 }
 
@@ -2912,13 +2912,13 @@ section {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Roboto", sans-serif;
-  color: #02362a;
+  color: #021936;
 }
 
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #02362a;
+  color: #021936;
   position: relative;
   padding-bottom: 12px;
 }
@@ -2951,7 +2951,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #02362a;
+  color: #021936;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
@@ -2993,7 +2993,7 @@ section {
   float: right;
   text-align: center;
   font-size: 13px;
-  color: #02362a;
+  color: #021936;
 }
 
 @media (max-width: 768px) {

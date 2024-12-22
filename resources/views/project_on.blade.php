@@ -8,7 +8,7 @@
       <div class="container">
              <!-- Section Title -->
              <div class="section-title">
-                <h2>Project in Prograss</h2>
+                <h2>Project in Progress</h2>
                 <p class="text-justify">RCHO has four years’ experience in implementing projects related to Afghanistan's thematic areas, such as education, health, Nutrition, gender equality, Women Economic Empowerment, Emergency response, and water, sanitation, and hygiene (WASH), Food Security & livelihoods. Documents that can demonstrate the track records of five years of experience in implementation of the humanitarian projects in Afghanistan has annexed to this file.</p>
               </div>
               <div class="row">

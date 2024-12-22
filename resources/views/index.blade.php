@@ -62,7 +62,7 @@
 
 
 <section id="hero" class="hero section">
-    <div class="featured container" style="margin-top: 550px ;">
+    <div class="featured container" style="margin-top: 480px ;">
 
         <div class="row gy-2">
 

@@ -8794,7 +8794,7 @@ textarea.form-control-lg {
 
 .bg-info {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-info-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #00a0e4;
 }
 
 .bg-warning {
@@ -8880,7 +8880,7 @@ textarea.form-control-lg {
 }
 
 .bg-info-subtle {
-  background-color: var(--bs-info-bg-subtle) !important;
+  background-color: #00a0e4;
 }
 
 .bg-warning-subtle {
