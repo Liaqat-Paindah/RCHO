@@ -9,9 +9,9 @@
                             <img class="flex-shrink-0 img-fluid border rounded" src="{{ url('assets/img/logo2.png')}}" alt="" style="width: 80px; height: auto">
                             <div class="text-start ps-4">
                                 <h3 class="mb-3">{{$careers->job_title}}</h3>
-                                <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-info me-2"></i>{{$careers->location}}</span>
-                                <span class="text-truncate me-3"><i class="far fa-clock text-info me-2"></i>{{$careers->type}}</span>
-                                <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-info me-2"></i>{{$careers->salary}}</span>
+                                <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-rcho me-2"></i>{{$careers->location}}</span>
+                                <span class="text-truncate me-3"><i class="far fa-clock text-rcho me-2"></i>{{$careers->type}}</span>
+                                <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-rcho me-2"></i>{{$careers->salary}}</span>
                             </div>
                         </div>
 
@@ -26,7 +26,7 @@
                                 </ul>
 
                             <br>
-                            <a class="btn btn-outline-info" href="{{ url('/jobs') }}">Apply Now</a>
+                            <a class="btn btn-outline-info" href="{{ url('/jobs', [$careers->id]) }}">Apply Now</a>
                         </div>
 
                     </div>
@@ -34,14 +34,14 @@
                     <div class="col-lg-4">
                         <div class="bg-light rounded p-5 mb-4 wow slideInUp" data-wow-delay="0.1s">
                             <h4 class="mb-4">Job Summery</h4>
-                            <p><i class="fa fa-angle-right text-info me-2"></i>Published On: {{$careers->created_at}}</p>
-                            <p><i class="fa fa-angle-right text-info me-2"></i>Vacancy: {{$careers->vacancy}}</p>
-                            <p><i class="fa fa-angle-right text-info me-2"></i>Type: {{$careers->type}}</p>
-                            <p><i class="fa fa-angle-right text-info me-2"></i>Salary: {{$careers->salary}}</p>
-                            <p><i class="fa fa-angle-right text-info me-2"></i>Location: {{$careers->location}}</p>
-                            <p class="m-0"><i class="fa fa-angle-right text-info me-2"></i>Dateline: {{$careers->application_deadline}}</p>
+                            <p><i class="fa fa-angle-right text-rcho me-2"></i>Published On: {{$careers->created_at}}</p>
+                            <p><i class="fa fa-angle-right text-rcho me-2"></i>Vacancy: {{$careers->vacancy}}</p>
+                            <p><i class="fa fa-angle-right text-rcho me-2"></i>Type: {{$careers->type}}</p>
+                            <p><i class="fa fa-angle-right text-rcho me-2"></i>Salary: {{$careers->salary}}</p>
+                            <p><i class="fa fa-angle-right text-rcho me-2"></i>Location: {{$careers->location}}</p>
+                            <p class="m-0"><i class="fa fa-angle-right text-rcho me-2"></i>Dateline: {{$careers->application_deadline}}</p>
                         </div>
-                        <div class="bg-info rounded p-5  wow slideInUp" data-wow-delay="0.1s">
+                        <div class="bg-rcho rounded p-5  wow slideInUp" data-wow-delay="0.1s">
                             <h4 class="mb-4 company-details" >Company Detail</h4>
                             <p class="m-0 text-custom company-details">
                             Reaching Community & Healthcare Organization (RCHO) is an independent registered

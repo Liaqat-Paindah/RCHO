@@ -12,6 +12,6 @@ class WorkExperience extends Model
 
     public function Job()
     {
-        return $this->belongsTo(Job::class);
+        return $this->belongsTo(Applicant::class);
     }
 }
