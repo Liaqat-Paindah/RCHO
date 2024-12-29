@@ -10,6 +10,8 @@ use App\Models\Career;
 use App\Models\User;
 use App\Models\Service;
 
+use App\Models\Applicant;
+
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ConfirmationMail;
 
@@ -167,5 +169,49 @@ class JobsController extends Controller
     {
         $job = Career::find($id);
         return view('jobs', compact('job'));
+    }
+
+    public function edit(Request $request)
+    {
+
+
+        DB::begintransaction();
+        try{
+            $update =
+            [
+                'job_title'=>$request->job_title,
+                'job_description'=>$request->job_description,
+                'qualifications'=>$request->qualifications,
+                'salary'=>$request->salary,
+                'location'=>$request->location,
+                'type'=>$request->type,
+                'vacancy'=>$request->vacancy,
+                'application_deadline'=>$request->application_deadline,
+            ];
+            DB::table('careers')->where('id', $request->id)->update($update);
+
+            DB::commit();
+            $careers = Career::paginate(12);
+            return view('dm_jobs', compact('careers'));
+
+        }catch(\Exception $e)
+        {
+            DB::rollback();
+            $careers = Career::paginate(12);
+            return view('dm_jobs', compact('careers'));
+        }
+    }
+    public function edit_shows(Request $request, $id)
+    {
+        $job = Career::find($id);
+        return view('jobs_edit', compact('job'));
+    }
+
+    public function destroy($id)
+    {
+        $job = Career::find($id)->delete();
+        $careers = Career::paginate(12);
+        return view('dm_jobs', compact('careers'));
+
     }
 }

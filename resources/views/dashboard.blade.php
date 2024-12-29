@@ -37,15 +37,22 @@
 	                        </div>
 	                    </li>
 	                    <li class="nav-item dropdown nav-user">
-	                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="admin_assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+	                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{url('admin_assets/images/user.jpg')}}" alt="" class="user-avatar-md rounded-circle"></a>
 	                        <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
 	                            <div class="nav-user-info">
 	                                <h5 class="mb-0 text-white nav-user-name">{{ Auth::user()->name }} </h5>
 	                                <span class="status"></span><span class="ml-2">{{ Auth::user()->email }}</span>
 	                            </div>
-	                            <a class="dropdown-item" href="{{ url('/profile')}}"><i class="fas fa-user mr-2"></i>Account</a>
-	                            <a class="dropdown-item" href="{{ url('/profile')}}"><i class="fas fa-cog mr-2"></i>Setting</a>
-	                            <a class="dropdown-item" href="{{ url('logout')}}"><i class="fas fa-power-off mr-2"></i>Logout</a>
+	                            <a class="dropdown-item" href="{{ url('/')}}"><i class="fas fa-user mr-2"></i>Account</a>
+	                            <a class="dropdown-item" href="{{ url('/')}}"><i class="fas fa-cog mr-2"></i>Setting</a>
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-power-off mr-2"></i>Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+
 	                        </div>
 	                    </li>
 	                </ul>
@@ -80,11 +87,6 @@
                                 </a>
                             </li>
                             <!-- Services Link -->
-                            <li class="nav-item">
-                                <a class="nav-link {{ Request::is('home') ? 'active' : '' }}" href="{{ url('/dashboard') }}">
-                                    <i class="fa fa-stethoscope"></i> Services
-                                </a>
-                            </li>
 
                             <!-- Contact Us Link -->
                             <li class="nav-item">

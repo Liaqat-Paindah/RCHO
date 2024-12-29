@@ -42,10 +42,8 @@
                                         <td>{{ $career->location }}</td>
                                         <td>
                                         <div class="btn-group ml-auto">
-                                            <button class="btn btn-sm btn-outline-light">Edit</button>
-                                            <button class="btn btn-sm btn-outline-light">
-                                                <i class="far fa-trash-alt"></i>
-                                            </button>
+                                                <a href="{{url('/jobs_edit', [$career->id])}}" class="btn btn-sm btn-outline-light">Edit</a>
+                                                <a href="{{url('/jobs_trash', [$career->id])}}" class="btn btn-sm btn-outline-light"><i class="fa fa-trash"></i></a>
                                         </div>
                                         </td>
                                     </tr>

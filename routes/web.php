@@ -16,15 +16,19 @@ use App\Http\Controllers\RequestController;
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::get('/dashboard_view', [JobsController::class, 'view'])->middleware(['auth', 'verified'])->name('dashboard_view');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+    Route::get('/dm_jobs', [JobsController::class, 'shows']);
+    Route::get('/jobs_trash/{id}', [JobsController::class, 'destroy']);
+    Route::get('/jobs_edit/{id}', [JobsController::class, 'edit_shows']);
+    Route::post('/jobs_edit', [JobsController::class, 'edit']);
+
+    Route::get('/applicants', [JobsController::class, 'Applicants']);
+    Route::get('/applicants_details/{id}', [JobsController::class, 'applicants_details']);
+    });
 require __DIR__.'/auth.php';
 Route::get('/project', [ProjectController::class, 'index']);
 Route::get('/project_ct', [ProjectController::class, 'completed']);
@@ -54,10 +58,7 @@ Route::get('/orders', [UserController::class, 'orders']);
 Route::post('/jobs', [JobsController::class, 'store']);
 Route::get('/jobs/{id}', [JobsController::class, 'show_jobs']);
 
-Route::get('/dm_jobs', [JobsController::class, 'shows']);
-Route::get('/applicants', [JobsController::class, 'Applicants']);
-Route::get('/dashboard_view', [JobsController::class, 'view']);
-Route::get('/applicants_details/{id}', [JobsController::class, 'applicants_details']);
+
 
 
 
