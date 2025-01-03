@@ -19,6 +19,13 @@
 	                </div>
 	                    <div class="row">
                             <!-- Display the Careers table -->
+                            <div class="row">
+                                <div class="col-sm-12 pl-3 pb-2">
+                                    <a href="{{ url('/new_jobs')}}" class="btn btn-rcho btn-sm">New Job</a>
+
+                                </div>
+
+                            </div>
                             <table class="table table-bordered bg-white">
                                 <thead>
                                     <tr>
@@ -35,13 +42,14 @@
                                     @foreach ($careers as $career)
                                     <tr>
                                         <td>{{ $career->id }}</td>
-                                        <td>{{ $career->job_title }}</td>
+                                        <td> <a href="{{ url('/jobs_desc',[$career->id])}}">{{ $career->job_title }}</a> </td>
                                         <td>{{ $career->salary }}</td>
                                         <td>{{ $career->type }}</td>
                                         <td>{{ $career->vacancy }}</td>
                                         <td>{{ $career->location }}</td>
                                         <td>
                                         <div class="btn-group ml-auto">
+                                                 <a href="{{url('/job_applicants', [$career->id])}}" class="btn btn-sm btn-outline-light">Applicants</a>
                                                 <a href="{{url('/jobs_edit', [$career->id])}}" class="btn btn-sm btn-outline-light">Edit</a>
                                                 <a href="{{url('/jobs_trash', [$career->id])}}" class="btn btn-sm btn-outline-light"><i class="fa fa-trash"></i></a>
                                         </div>

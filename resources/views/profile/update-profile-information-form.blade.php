@@ -1,79 +1,80 @@
-<x-jet-form-section submit="updateProfileInformation">
-    <x-slot name="title">
-        {{ __('Profile Information') }}
-    </x-slot>
-
-    <x-slot name="description">
-        {{ __('Update your account\'s profile information and email address.') }}
-    </x-slot>
-
-    <x-slot name="form">
-        <!-- Profile Photo -->
-        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-            <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 sm:col-span-4">
-                <!-- Profile Photo File Input -->
-                <input type="file" class="hidden"
-                            wire:model="photo"
-                            x-ref="photo"
-                            x-on:change="
-                                    photoName = $refs.photo.files[0].name;
-                                    const reader = new FileReader();
-                                    reader.onload = (e) => {
-                                        photoPreview = e.target.result;
-                                    };
-                                    reader.readAsDataURL($refs.photo.files[0]);
-                            " />
-
-                <x-jet-label for="photo" value="{{ __('Photo') }}" />
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Profile Information</h5>
+        <p class="card-text">Update your account's profile information and email address.</p>
+    </div>
+    <div class="card-body">
+        <form id="updateProfileInformation">
+            <!-- Profile Photo -->
+            <div class="mb-4">
+                <label for="photo" class="form-label">Photo</label>
+                <input type="file" id="photo" class="form-control d-none" onchange="previewPhoto(event)">
 
                 <!-- Current Profile Photo -->
-                <div class="mt-2" x-show="! photoPreview">
-                    <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}" class="rounded-full h-20 w-20 object-cover">
+                <div id="currentPhoto" class="mt-2">
+                    <img src="https://via.placeholder.com/150" alt="Current Profile Photo" class="rounded-circle" style="height: 80px; width: 80px; object-fit: cover;">
                 </div>
 
                 <!-- New Profile Photo Preview -->
-                <div class="mt-2" x-show="photoPreview" style="display: none;">
-                    <span class="block rounded-full w-20 h-20 bg-cover bg-no-repeat bg-center"
-                          x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
-                    </span>
+                <div id="photoPreview" class="mt-2 d-none">
+                    <div class="rounded-circle" style="height: 80px; width: 80px; background-size: cover; background-position: center;"></div>
                 </div>
 
-                <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
-                    {{ __('Select A New Photo') }}
-                </x-jet-secondary-button>
-
-                @if ($this->user->profile_photo_path)
-                    <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
-                        {{ __('Remove Photo') }}
-                    </x-jet-secondary-button>
-                @endif
-
-                <x-jet-input-error for="photo" class="mt-2" />
+                <button type="button" class="btn btn-secondary mt-2" onclick="document.getElementById('photo').click()">Select A New Photo</button>
+                <button type="button" class="btn btn-danger mt-2" id="removePhoto" style="display: none;">Remove Photo</button>
+                <div id="photoError" class="text-danger mt-2" style="display: none;">Invalid photo.</div>
             </div>
-        @endif
 
-        <!-- Name -->
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="name" value="{{ __('Name') }}" />
-            <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
-            <x-jet-input-error for="name" class="mt-2" />
-        </div>
+            <!-- Name -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                <div class="text-danger mt-1 d-none" id="nameError">Name is required.</div>
+            </div>
 
-        <!-- Email -->
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="email" value="{{ __('Email') }}" />
-            <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
-            <x-jet-input-error for="email" class="mt-2" />
-        </div>
-    </x-slot>
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                <div class="text-danger mt-1 d-none" id="emailError">Invalid email address.</div>
+            </div>
 
-    <x-slot name="actions">
-        <x-jet-action-message class="mr-3" on="saved">
-            {{ __('Saved.') }}
-        </x-jet-action-message>
+            <!-- Actions -->
+            <div class="d-flex justify-content-between">
+                <span id="actionMessage" class="text-success d-none">Saved.</span>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
 
-        <x-jet-button wire:loading.attr="disabled" wire:target="photo">
-            {{ __('Save') }}
-        </x-jet-button>
-    </x-slot>
-</x-jet-form-section>
+<script>
+    function previewPhoto(event) {
+        const fileInput = event.target;
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            document.getElementById('currentPhoto').classList.add('d-none');
+            const preview = document.getElementById('photoPreview');
+            preview.style.backgroundImage = `url(${e.target.result})`;
+            preview.classList.remove('d-none');
+            document.getElementById('removePhoto').style.display = 'inline-block';
+        };
+
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+
+    document.getElementById('removePhoto').addEventListener('click', function () {
+        document.getElementById('currentPhoto').classList.remove('d-none');
+        document.getElementById('photoPreview').classList.add('d-none');
+        document.getElementById('photoPreview').style.backgroundImage = '';
+        document.getElementById('removePhoto').style.display = 'none';
+        document.getElementById('photo').value = '';
+    });
+
+    document.getElementById('updateProfileInformation').addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Add form validation and save logic here
+        document.getElementById('actionMessage').classList.remove('d-none');
+    });
+</script>

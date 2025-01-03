@@ -13,7 +13,7 @@
               </div>
               <div class="row">
                 @foreach($projects as $project)
-                <div class="col-md-6 d-flex align-items-stretch">
+                <div class="col-md-6 d-flex align-items-stretch mt-4">
                   <div class="card" style='background-image: url("{{$project->image}}");' data-aos="fade-up" data-aos-delay="100">
                     <div class="card-body">
                       <h5 class="card-title"><a href="">{{$project->project_name}}</a></h5>

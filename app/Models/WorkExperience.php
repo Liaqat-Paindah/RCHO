@@ -10,8 +10,9 @@ class WorkExperience extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function Job()
+    public function applicant()
     {
-        return $this->belongsTo(Applicant::class);
+        return $this->belongsTo(Applicant::class, 'applicant_id', 'id');
     }
+
 }

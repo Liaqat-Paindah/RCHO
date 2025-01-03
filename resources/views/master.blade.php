@@ -112,7 +112,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/') }}">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/about') }}">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/reports') }}">Reports</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services') }}">Areas of Focus</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/career') }}">Careers</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/about') }}">Privacy policy</a></li>
             </ul>
@@ -122,7 +122,7 @@
             <h4>Our Services</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/humanitarian') }}">Humanitarian</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/Agriculture') }}">Agriculture  </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/education') }}">Education  </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/Nutrition') }}">Nutrition</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/services/Health') }}">Health</a></li>
             </ul>
@@ -132,11 +132,11 @@
             <h4>Our Social Networks</h4>
             <p>Stay connected with us! Follow our official social media accounts for the latest updates, news, and insights:</p>
             <div class="social-links mt-3">
-              <a href="https://x.com/RCHO177016" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="https://www.facebook.com/profile.php?id=61559738920399" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="https://www.instagram.com/RCHO_afghanistan/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="" class="instagram"><i class="bx bxl-instagram"></i></a>
               <a href="{{ url('/') }}" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="https://www.linkedin.com/in/RCHO-afghanistan-96239030b/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
           </div>
 

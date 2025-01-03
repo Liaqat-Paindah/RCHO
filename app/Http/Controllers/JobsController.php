@@ -38,6 +38,7 @@ class JobsController extends Controller
         $total_applicants = DB::table('applicants')->count();
        $applicants=DB::table('applicants')
        ->join('work_experiences', 'applicants.id','=' ,'work_experiences.applicant_id')
+       ->distinct('work_experiences.applicant_id')
        ->select('applicants.*')
        ->paginate(12);
         return view('applicants', compact('applicants', 'total_jobs', 'total_applicants', 'total_users', 'total_services'));
@@ -67,34 +68,6 @@ class JobsController extends Controller
     }
     public function store(Request $request)
     {
-
-        $validatedData = $request->validate([
-            'fullname' => 'required|min:5',
-            'dob' => 'required',
-            'gender' => 'required',
-            'nid' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'province' => 'required',
-            'city' => 'required',
-            'district' => 'required',
-            'degree' => 'required',
-            'major' => 'required',
-            'graduation' => 'required',
-            'grade' => 'required',
-            'experience' => 'required',
-            'cv' => 'required',
-            'letters' => 'required',
-            'diploma' => 'required',
-            'transcript' => 'required',
-            'tazkira' => 'required',
-            'job_titles.*' => 'nullable|string',
-            'company_names.*' => 'nullable|string',
-            'start_dates.*' => 'nullable|date',
-            'end_dates.*' => 'nullable|date',
-            'job_descriptions.*' => 'nullable|string',
-        ]);
-
 
         // Save  files
         $cvPath = $request->file('cv')->store('public/assets/img/applications');
@@ -126,29 +99,34 @@ class JobsController extends Controller
         $job->diploma = $diplomaPath;
         $job->transcript = $transcriptPath;
         $job->tazkira = $tazkiraPath;
-        $applicantId = $job->id;  // Get the dynamic applicant ID
-
+        $job->job_id = $request->job_id;
         $job->save(); // Save the job first to get its ID
-
+        $applicantId = $job->id;  // Get the dynamic applicant ID
         // Save WorkExperiences if provided
-        if ($request->has('job_titles')) {
+        if ($request->has('job_titles') && is_array($request->job_titles)) {
             $workExperiences = [];
             foreach ($request->job_titles as $key => $jobTitle) {
-                $workExperiences[] = new WorkExperience([
-                    'job_id' => $request->job_id[$key],
-                    'job_title' => $jobTitle,
-                    'company_name' => $request->company_names[$key],
-                    'start_date' => $request->start_dates[$key],
-                    'end_date' => $request->end_dates[$key],
-                    'job_description' => $request->job_descriptions[$key],
-                    'applicant_id' =>$applicantId,
-
-                ]);
+                // Validate and process only valid records
+                if (!empty($jobTitle)) {
+                    $workExperiences[] = [
+                        'job_id' => $request->input("job_id")[$key] ?? null,
+                        'job_title' => $jobTitle,
+                        'company_name' => $request->input("company_names")[$key] ?? null,
+                        'start_date' => $request->input("start_dates")[$key] ?? null,
+                        'end_date' => $request->input("end_dates")[$key] ?? null,
+                        'job_description' => $request->input("job_descriptions")[$key] ?? null,
+                        'applicant_id' => $applicantId,
+                        'created_at' => now(),
+                        'updated_at' => now(),
+                    ];
+                }
             }
-            $job->workExperiences()->saveMany($workExperiences); // Associate work experiences with the job
-        }
 
-        // Send confirmation email
+            // Save all experiences in bulk
+            if (!empty($workExperiences)) {
+                WorkExperience::insert($workExperiences);
+            }
+        }
 
         return back()->with('success', 'Your Application has been successfully send!');
     }
@@ -173,8 +151,6 @@ class JobsController extends Controller
 
     public function edit(Request $request)
     {
-
-
         DB::begintransaction();
         try{
             $update =
@@ -214,4 +190,56 @@ class JobsController extends Controller
         return view('dm_jobs', compact('careers'));
 
     }
+    public function Job_Details($id)
+    {
+        $career = DB::table('careers')
+        ->where('careers.id','=' , $id)
+        ->select('careers.*')->first();
+        return view('jobs_desc', compact('career'));
+    }
+
+    public function saveRecord()
+    {
+        return view('new_jobs');
+    }
+
+    public function saveJobs(Request $request)
+    {
+
+        DB::beginTransaction();
+        try {
+            $career= new Career();
+            $career->job_title = $request->job_title;
+            $career->job_description = $request->job_description;
+            $career->qualifications  = $request->qualifications;
+            $career->salary = $request->salary;
+            $career->location  = $request->location;
+            $career->type  = $request->type;
+            $career->vacancy  = $request->vacancy;
+            $career->application_deadline  = $request->application_deadline;
+            $career->save();
+            DB::commit();
+            return redirect('dm_jobs');
+        } catch(\Exception $e) {
+            DB::rollback();
+            return redirect()->back();
+        }
+
+    }
+
+    public function job_applicants($id)
+    {
+        $total_jobs = Career::count();
+        $total_users = User::count();
+        $total_services = Service::count();
+        $total_applicants = DB::table('applicants')->count();
+       $applicants=DB::table('applicants')
+       ->join('work_experiences', 'applicants.id','=' ,'work_experiences.applicant_id')
+        ->where('applicants.job_id','=', $id)
+       ->select('applicants.*', 'work_experiences.applicant_id')
+       ->distinct('work_experiences.applicant_id')
+       ->paginate(12);
+       return view('job_applicants', compact('applicants', 'total_jobs', 'total_users', 'total_services', 'total_applicants'));
+    }
+
 }

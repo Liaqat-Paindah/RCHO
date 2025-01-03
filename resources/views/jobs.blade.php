@@ -117,8 +117,6 @@
           <form id="jobApplicationForm" action="{{ url('/jobs') }}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="job_id" value="{{ $job->id }}">
-
-
             <!-- Step 1: Personal Information -->
             <div class="form-step active" id="step1">
               <h4>Step 1: Personal Information</h4>
