@@ -37,8 +37,6 @@ class JobsController extends Controller
         $total_services = Service::count();
         $total_applicants = DB::table('applicants')->count();
        $applicants=DB::table('applicants')
-       ->join('work_experiences', 'applicants.id','=' ,'work_experiences.applicant_id')
-       ->distinct('work_experiences.applicant_id')
        ->select('applicants.*')
        ->paginate(12);
         return view('applicants', compact('applicants', 'total_jobs', 'total_applicants', 'total_users', 'total_services'));
@@ -60,7 +58,6 @@ class JobsController extends Controller
     public function applicants_details($id)
     {
         $career = DB::table('applicants')
-        ->join('work_experiences', 'applicants.id','=' ,'work_experiences.applicant_id')
         ->where('applicants.id','=' , $id)
         ->select('applicants.*', 'work_experiences.*')->first();
 

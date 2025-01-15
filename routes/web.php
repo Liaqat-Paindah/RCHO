@@ -13,6 +13,9 @@ use App\Http\Controllers\DonationController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\newsController;
+
 
 
 
@@ -26,7 +29,7 @@ use App\Http\Controllers\RequestController;
     Route::get('/jobs_edit/{id}', [JobsController::class, 'edit_shows']);
     Route::post('/jobs_edit', [JobsController::class, 'edit']);
     Route::get('/applicants', [JobsController::class, 'Applicants']);
-
+    Route::get('/register', [RegisteredUserController::class, 'store']);
     Route::get('/job_applicants/{id}', [JobsController::class, 'job_applicants']);
     Route::get('/applicants_details/{id}', [JobsController::class, 'applicants_details']);
     Route::post('/jobs', [JobsController::class, 'store']);
@@ -41,6 +44,7 @@ use App\Http\Controllers\RequestController;
     Route::get('/staff', [StaffController::class, 'index']);
     Route::get('/services', [ServiceController::class, 'index']);
     Route::get('/do', [ServiceController::class, 'do']);
+    Route::get('/news',[newsController::class, 'index']);
     Route::get('/contact',[ServiceController::class, 'contact']);
     Route::get('services/{category}', [ServiceController::class, 'show']);
     Route::get('/donations/create', [DonationController::class, 'create'])->name('donations.create');
@@ -56,6 +60,8 @@ use App\Http\Controllers\RequestController;
     Route::get('/users', [UserController::class, 'users']);
     Route::get('/jobs/{id}', [JobsController::class, 'show_jobs']);
     // routes/web.php
+    Route::post('/jobs', [JobsController::class, 'store']);
+
     Route::get('/about', function(){
     return view('about');
     });

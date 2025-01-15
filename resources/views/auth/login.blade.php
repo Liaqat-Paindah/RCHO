@@ -37,16 +37,11 @@
                     </button>
 
                     <!-- Forgot Password Link at the bottom -->
-                    <div class="text-center">
-                        <a href="{{ url('/forgot-password')  }}" class="text-muted text-sm">
-                            Forgot your password?
-                        </a>
-                    </div>
+
                 </form>
 
                 <!-- Sign Up Link -->
                 <div class="text-center mt-3">
-                    <p class="mb-0">Don't have an account? <a href="/register" class="text-info">Sign up</a></p>
                 </div>
             </div>
         </div>
